@@ -1,9 +1,8 @@
 import { COMPANY_NAME, COMPANY_NICKNAME } from "../../consts";
 import {  
     PLACEHOLDER as contentCTAimg, 
-    PLACEHOLDER_PERSON as imgUnderHeader,
-    PLACEHOLDER as imgUnderHeader,   
-    PLACEHOLDER as imgHeader,    
+    RAYYU_MALDIVES as imgUnderHeader,
+    JORGEN_HENDRICKSEN as imgHeader,    
 } from "../../constsImages";
 
 const homePage = {
@@ -12,21 +11,22 @@ const homePage = {
       stars: true,
       imagePath: imgHeader.imagePath,
       imageAlt: imgHeader.imageAlt,
-      headerH1: `Heading h1`,
-      paragraph: "Description",
+      headerH1: "Fully Funded <br> Flight Training",
+      paragraph:
+        "Get 15 Hours of Free Flight Training—Earn the Rest with Dedication! <br/>The Speedway Flight Training Scholarship helps high school students take off toward a professional aviation career—at no cost to their families.",
       buttons: [
         {
-          name: "Form",
-          link: "/#",
-          primary: false,
+          name: "Donate",
+          link: "/donation",
+          primary: true,
         },
       ],
     },
 
     underHeader: {
-      title: "Your Journey Starts Here",
+      title: "Dream of flying?",
       paragraphs: [
-        "Explanation",
+        "We’ll fund your wings. The Speedway Flight Training Scholarship covers 100% of your FAA Private Pilot Certificate costs—so you can soar toward a professional aviation career.",
       ],
       image: {
         imagePath: imgUnderHeader.imagePath,
@@ -34,73 +34,135 @@ const homePage = {
       },
       buttons: [
         {
-          text: "About Us",
-          link: "/about-us",
+          text: "Support Future Aviators",
+          link: "/donations",
         },
       ],
     },
 
-    anotherSection: {
-      upperHeading: "Why",
-      heading: "Heading",
-      descriptions: [],
+    missionStatementSection: {
+      upperHeading: "Start here",
+      title: "Opening Doors for Aspiring Pilots",
+      description: "We’re dedicated to removing financial barriers for ambitious high school students. Our scholarship funds flight training, mentorship, and FAA certification, empowering you to enroll in college aviation programs and pursue advanced certifications.",
+      imagePath: "",
+      imageAlt: "",
       bullets: [
         {
-          title: "title",
-          descriptions: [
-            "Descriptions",
-          ],
-          icon: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z",
+          title: "Master the Basics <br> (FAA Knowledge Test)",
+          description: "",
+          link: "#",
+        },
+        {
+          title: "Take Control  <br> (First Solo Flight)",
+          description: "Earn Your Wings (Private Pilot Certification)",
+          link: "#",
+        },
+        {
+          title: "Earn Your Wings <br> (Private Pilot Certification)",
+          description: "",
+          link: "#",
+          
         },
       ],
-      imageLegend: "Become a Pilot with USATS",
-      imagePath: "/src/assets/USATS_banner_Application.webp",
+    },
+
+
+    aboutTheScholarship: {
+      title: "What’s the Scholarship?",
+      paragraphs: [
+        "The Speedway Flight Training Scholarship is a 3-phase program designed to help high school students earn their FAA Private Pilot Certificate.",
+        "Students start with FAA-approved study materials and test prep. If they pass and complete a solo flight within 15 hours, Speedway covers the rest of the training up to 50–60 hours total.",
+        "Training is conducted at the Atlanta Speedway Airport in Hampton, GA and includes mentorship and strict safety/character requirements.",
+      ],
+      image: {
+        imagePath: "/src/assets/flight_briefing.jpg",
+        imageAlt: "Flight student being briefed by instructor",
+      },
+      buttons: [
+        {
+          text: "Learn More",
+          link: "#program",
+        },
+        {
+          text: "Donate",
+          link: "/donate",
+        },
+      ],
+    },
+
+    programOverview: {
+      images: {
+        phase1: {
+          imagePath: "/src/assets/study_materials.jpg",
+          imageAlt: "FAA test preparation kit",
+        },
+        phase2: {
+          imagePath: "/src/assets/solo_flight.jpg",
+          imageAlt: "Student pilot flying solo",
+        },
+        phase3: {
+          imagePath: "/src/assets/checkride_pass.jpg",
+          imageAlt: "New pilot receiving certificate",
+        },
+      },
+      buttons: [
+        {
+          name: "Explore All 3 Phases",
+          link: "#program",
+          primary: true,
+        },
+      ],
+    },
+
+    missionSection: {
+      upperHeading: "Why This Matters",
+      heading: "Mission-Driven. Character-Focused. Career-Ready.",
+      descriptions: [
+        "We believe talent shouldn't be grounded by cost. This scholarship supports aspiring pilots by removing financial barriers to professional flight training.",
+        "The program is about more than flight hours—students are mentored in aviation professionalism, responsibility, and long-term success.",
+        "All applicants pledge to remain drug- and alcohol-free and to follow traffic laws while enrolled. That’s the standard aviation demands—and we uphold it from day one.",
+      ],
+      bullets: [],
+      imageLegend: "Scholarship students in flight school",
+      imagePath: "/src/assets/mentor_program.jpg",
       imageAlt: "",
     },
 
-    oneSection: {
-      upperHeading: "",
-      heading: "",
-      descriptions: [],
-      imageLegend: "",
-      imagePath: contentCTAimg.imagePath,
-      imageAlt: contentCTAimg.imageAlt,
-    },
-
-    blogfeed: {
-      upperHeading: "",
-      heading: "",
-      description: "",
-    },
-
-
-    section: {
-      upperHeading: "",
-      heading: "",
-      headingText: ["", ""],
-      buttonText: "",
-      buttonLink: "",
-      reviews: [
-        {
-          body: "",
-          author: "",
-        },
+    howItWorks: {
+      upperHeading: "HOW TO GET STARTED",
+      heading: "Your Steps to Takeoff",
+      descriptions: [
+        "1. Check your eligibility",
+        "2. Submit your application",
+        "3. Begin Phase One training and prep for your FAA knowledge test",
+        "4. Complete your first solo within 15 hours to earn full funding",
       ],
+      imageLegend: "Student pilot preparing aircraft",
+      imagePath: "/src/assets/takeoff_steps.jpg",
+      imageAlt: "",
     },
 
-    faQ: {
-      title: "",
+    eligibilitySection: {
+      title: "Who Should Apply?",
       description: "",
       questions: [
         {
-          question: "",
-          answer: "",
+          question: "Who is this scholarship for?",
+          answer: "College-bound high school juniors and seniors who are passionate about aviation and ready to commit to the program's requirements.",
+        },
+        {
+          question: "What are the expectations?",
+          answer: "Remain drug- and alcohol-free, follow all traffic laws, attend all sessions on time, and show professionalism throughout your training.",
+        },
+        {
+          question: "Where does training take place?",
+          answer: "Training is held at the Atlanta Speedway Airport in Hampton, Georgia, by Speedway Flight Training, LLC.",
         },
       ],
       buttons: [
         {
-          name: "Contact Us",
-          link: "contact-us",
+          name: "View Full FAQ",
+          link: "/faq",
           primary: true,
         },
       ],

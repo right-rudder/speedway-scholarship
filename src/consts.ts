@@ -28,18 +28,18 @@ export const LOCATIONS = [
 ];
 
 // CHANGE client business info
-export const COMPANY_NAME = "";
+export const COMPANY_NAME = "Speedway Flight Training";
 export const PHONE_NUMBER = "";
 export const ADDRESS_LINE_1 = "";
 export const ADDRESS_LINE_2 = "";
-export const FACEBOOK_URL = "https://www.facebook.com/";
-export const INSTAGRAM_URL = "https://www.instagram.com/";
-export const LINKEDIN_URL = "https://www.linkedin.com/company/";
+export const FACEBOOK_URL = null;
+export const INSTAGRAM_URL = null;
+export const LINKEDIN_URL = null;
 export const YOUTUBE_URL = null;
 export const TWITTER_URL = null;
 export const EMAIL_ADDRESS = "";
 
-export const COMPANY_NICKNAME = "";
+export const COMPANY_NICKNAME = "Speedway";
 export const ADDRESS = "";
 export const ADDRESS_STATE = "";
 export const ADDRESS_CITY = "";
