@@ -6,7 +6,7 @@ import UnderHeader from "../components/UnderHeader.astro";
 import homePage from "../data/pages/homePage";
 
 import "/src/styles/global.css";
-import Breadcrumps from "../components/Breadcrumps.astro";
+import ProgramStructure from "../components/ProgramStructure.astro";
 
 const { data } = homePage;
 ---
@@ -19,7 +19,7 @@ const { data } = homePage;
   <!-- HEADER -->
   <HeaderScreen content={data.header} />
   <UnderHeader content={data.underHeader} />
-  <Breadcrumps content={data.missionStatementSection} />
+  <ProgramStructure content={data.missionStatementSection} />
 
   <!-- CONTENT -->
 
