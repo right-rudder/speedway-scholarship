@@ -1,16 +1,8 @@
 export const navbarLinks = [
     {
-      name: "Page 1",
+      name: "Home",
       link: "/#",
       submenu: [
-        {
-          name: "Subpage 1",
-          link: "/#",
-        },
-        {
-          name: "Subpage 2",
-          link: "/#",
-        },
       ],
     },
     {
@@ -18,14 +10,22 @@ export const navbarLinks = [
       link: "/about-us",
       submenu: [
         {
-          name: "Subpage 1",
-          link: "/about-us/#",
+          name: "Program",
+          link: "/#program",
         },
-      ],
+        {
+          name: "Eligibility",
+          link: "/#faq",
+        },],
     },
     {
-      name: "Form 1",
-      link: "/#",
+      name: "Donate",
+      link: "/donation",
+      submenu: [],
+    },
+    {
+      name: "Apply now",
+      link: "/enroll",
       submenu: [],
     },
   ];

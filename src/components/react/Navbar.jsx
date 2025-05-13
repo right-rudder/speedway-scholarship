@@ -13,7 +13,7 @@ import {
   YOUTUBE_URL,
 } from "../../consts";
 
-import { PLACEHOLDER as imgCompanyLogo } from "../../constsImages.js";
+import { LOGO_WRITTEN as imgCompanyLogo } from "../../constsImages.js";
 
 const Navbar = ({ pathname }) => {
   const [openMobile, setOpenMobile] = useState(false);
@@ -108,7 +108,7 @@ const Navbar = ({ pathname }) => {
       <div
         className={`${
           navBar || openMobile
-            ? "bg-primary-950/90 backdrop-blur-sm"
+            ? "bg-mariner-900/90 backdrop-blur-sm"
             : "bg-transparent"
         } duration-500`}
       >
@@ -145,7 +145,7 @@ const Navbar = ({ pathname }) => {
                         <a
                           href={item.link}
                           target={`${item.link.includes("http") ? "_blank" : "_self"}`}
-                          className="font-medium font-sans text-lg duration-300 hover:underline decoration-accent-900 decoration-4 underline-offset-[10px] py-12 border-accent whitespace-nowrap group-last:font-bold group-last:hover:text-muted-950 group-last:bg-accent-900 group-last:py-3 group-last:px-5 group-last:rounded-sm group-last:hover:bg-accent-500 group-last:hover:no-underline"
+                          className="font-medium font-sans text-lg duration-300 hover:underline decoration-primary-700 decoration-4 underline-offset-[10px] py-12 border-accent whitespace-nowrap group-last:font-bold group-last:hover:text-primary-950 group-last:bg-primary-800 group-last:py-3 group-last:px-5 group-last:rounded-sm group-last:hover:bg-primary-900 group-last:hover:no-underline"
                         >
                           <span className="relative font-light text-white group-last:text-white">
                             {item.name}
@@ -293,8 +293,8 @@ const Navbar = ({ pathname }) => {
           className="z-30 relative flex justify-center items-center align-middle"
         >
           <img
-            src="/USATS_Logo_White.webp"
-            alt="  Logo"
+            src={imgCompanyLogo.imagePath}
+            alt={imgCompanyLogo.imageAlt}
             aria-label="  Logo"
             title=" "
             className="object-contain h-20 w-auto drop-shadow-sm"
