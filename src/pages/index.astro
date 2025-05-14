@@ -9,6 +9,7 @@ import { speedwayScholarship } from "../data/scholarshipData";
 import "/src/styles/global.css";
 import ProgramStructure from "../components/ProgramStructure.astro";
 import Requirements from "../components/Requirements.astro";
+import ProgramDetails from "../components/ProgramDetails.astro";
 
 const { data } = homePage;
 ---
@@ -21,10 +22,10 @@ const { data } = homePage;
   <!-- HEADER -->
   <HeaderScreen content={data.header} />
   <UnderHeader content={data.underHeader} />
+  <!-- CONTENT -->
   <ProgramStructure content={data.missionStatementSection} />
   <Requirements content={speedwayScholarship.eligibility} />
-  <!-- CONTENT -->
-
+  <ProgramDetails content={speedwayScholarship.awardDetails} />
   <!-- CTA -->
 
 </BaseLayout>

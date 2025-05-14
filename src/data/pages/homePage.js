@@ -16,6 +16,11 @@ const homePage = {
         "Get 15 Hours of Free Flight Training—Earn the Rest with Dedication! <br/>The Speedway Flight Training Scholarship helps high school students take off toward a professional aviation career—at no cost to their families.",
       buttons: [
         {
+          name: "More",
+          link: "#program",
+          primary: true,
+        },
+        {
           name: "Donate",
           link: "/donation",
           primary: true,

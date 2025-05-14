@@ -1,38 +1,48 @@
+import UnderHeader from "../components/UnderHeader.astro";
 import { 
-  RAYYU_MALDIVES as imgTestPhase
+  RAYYU_MALDIVES as imgTestPhase,
+  MENTOR_PILOT_SHAKING_HANDS_WITH_STUDENT as imgAboutMission,
+  PILOT_STUDENT_DOING_CHECKLIST_ON_PLANE  as imgAboutCommitment,
 } from "../constsImages";
 
 
 export const speedwayScholarship = {
-    missionStatement: {
-      title: "Mission Statement",
-      description: [
-        "The Speedway Flight Training Scholarship Fund is dedicated to opening doors for ambitious, college-bound high school students who dream of flying.",
-        "Our mission is to support aspiring aviators by covering the full cost of earning their FAA Private Pilot Certificate—a crucial first step toward a professional aviation career.",
-        "By removing financial barriers, this scholarship empowers students to begin flight training and obtain the credentials needed to enroll in accredited college or university aviation programs.",
-        "Awards are granted through a competitive application process based solely on financial need and demonstrated potential—regardless of race, gender, or religious background.",
-        "From there, they can continue their journey toward advanced certifications and a degree in aviation.",
-        "We’re committed to elevating the next generation of pilots by investing in talent, passion, and perseverance."
-      ],
-      bullets: [
-        "Full coverage of FAA Private Pilot Certificate costs",
-        "Competitive, needs-based selection",
-        "Commitment to diversity and inclusion"
-      ]
-    },
+    about: {
+      upperHeading: "About",
+      title: "Speedway Flight Training Scholarship Fund, Inc.",
+      description: "The Speedway Flight Training Scholarship Fund is a nonprofit organization transforming aviation dreams into reality. We provide fully funded FAA Private Pilot Certificates to deserving high school students, creating pathways to professional aviation careers while instilling the discipline and responsibility essential for success in the skies. Through financial support and mentorship, we're building a new generation of skilled, safety-conscious pilots from all backgrounds.",
+      imagePath: "",
+      imageAlt: "",
+      missionStatement: {
+        upperHeading: "",
+        title: "Mission Statement",
+        imagePath: imgAboutMission.imagePath,
+        imageAlt: imgAboutMission.imageAlt,
+        description: [
+          "The Speedway Flight Training Scholarship Fund is dedicated to opening doors for ambitious, college-bound high school students who dream of flying. ",
+          "Our mission is to support aspiring aviators by covering the full cost of earning their FAA Private Pilot Certificate—a crucial first step toward a professional aviation career. ",
+          "By removing financial barriers, this scholarship empowers students to begin flight training and obtain the credentials needed to enroll in accredited college or university aviation programs.",
+          "From there, they can continue their journey toward advanced certifications and a degree in aviation. ",
+          "Awards are granted through a competitive application process based solely on financial need and demonstrated potential—regardless of race, gender, or religious background. We’re committed to elevating the next generation of pilots by investing in talent, passion, and perseverance.",
+        ]
+      },
   
-    commitment: {
-      title: "Commitment to Excellence and Responsibility",
-      description: [
-        "Aviation is a profession that demands discipline, sound judgment, and a deep sense of responsibility—qualities that define success in the field.",
-        "The fund not only provides financial support but also offers mentorship to guide recipients toward long-term success in aviation.",
-        "Recipients must pledge to uphold the highest standards of professional conduct throughout the award period."
-      ],
-      bullets: [
-        "Remain drug- and alcohol-free",
-        "Adhere to all traffic laws and regulations while operating a motor vehicle",
-        "Maintain professionalism and punctuality to preserve FAA medical eligibility"
-      ]
+      commitment: {
+        upperHeading: "",
+        title: "Commitment to Excellence and Responsibility",
+        imagePath: imgAboutCommitment.imagePath,
+        imageAlt: imgAboutCommitment.imageAlt,
+        description: [
+          "Aviation is a profession that demands discipline, sound judgment, and a deep sense of responsibility—qualities that distinguish it from many other careers. One of the core goals of the Speedway Flight Training Scholarship Fund is not only to provide financial support but also to help shape the character and professionalism of the next generation of aviators. Where possible, we aim to offer mentorship to guide scholarship recipients toward long-term success in the field.",
+          "As part of this commitment, scholarship recipients must understand that the misuse of alcohol or drugs can jeopardize their careers. Such behavior may disqualify a pilot from obtaining an FAA medical certificate, which is a critical requirement for all professional pilots. Likewise, a record of traffic violations can indicate poor judgment or a lack of maturity—traits that are incompatible with the responsibilities of flight.",
+          "For these reasons, all scholarship recipients are required to pledge, for the duration of the award:",
+        ],
+        bullets: [
+          "Remain drug- and alcohol-free",
+          "Adhere to all traffic laws and regulations while operating a motor vehicle",
+        ],
+        lastParagraph: "This pledge reflects the high standards of the aviation industry and the expectations of this scholarship program. It is not just a rule—it’s a reflection of the professionalism that defines a successful pilot.",
+      },
     },
   
     programStructure: {
@@ -138,32 +148,37 @@ export const speedwayScholarship = {
     },
   
     awardDetails: {
+      upperHeading: "Details",
       title: "Award Details & Terms",
+      description: "This all-inclusive scholarship covers every step of your Private Pilot Certificate journey. Review what's included, how the phased program works, and important terms for recipients.",
       subSections: [
         {
           title: "Phase One Award – Training Materials",
+          description: "Each Phase One recipient will receive the Gleim Aviation Deluxe Private Pilot Kit with Audio Review—a comprehensive, Part 141-approved learning package designed to support success on the FAA Private Pilot Knowledge Exam. Kit includes:",
           bullets: [
+            "Gleim Online Ground School for Private Pilot (Part 141-approved)",
+            "FAA Test Prep Online - Private Pilot",
+            "Private Pilot Audio Review",
             "FAR/AIM (Federal Aviation Regulations / Aeronautical Information Manual)",
             "Pilot Logbook",
             "Pilot Handbook",
             "Flight Plotter",
             "E6B Flight Computer",
-            "Private Pilot Oral Exam Guide & ACS",
+            "Private Pilot Oral Exam Guide & ACS (Airman Certification Standards)",
             "Private Pilot Flight Maneuvers and Practical Test Prep",
             "FAA Private Pilot Knowledge Test Book",
             "Private Pilot Syllabus",
             "Private Pilot Training Record Book",
             "Online Aviation Communications Course",
-            "Security-Related Airspace Course"
-          ]
+            "Security-Related Airspace Course",
+          ],
         },
         {
           title: "Phase Two & Three Awards – Flight Training",
           bullets: [
-            "Flight instruction and aircraft rental for Phases Two and Three at Atlanta Speedway Airport",
-            "Fees paid directly to service providers by the fund"
-          ]
-        },
+            "Flight instruction and aircraft rental for Phases Two and Three will be provided by Speedway Flight Training, LLC, located at Atlanta Speedway Airport, Hampton, GA.",
+          ],
+        },        
         {
           title: "Testing Fees",
           bullets: [
@@ -174,15 +189,16 @@ export const speedwayScholarship = {
         {
           title: "Program Duration & Extensions",
           bullets: [
-            "All training and certification must be completed by the recipient’s freshman year of college",
-            "Extensions considered on a case-by-case basis"
+            "All flight training and certification must be completed within 18 months of the initial award notification or before the start of the recipient’s freshman year of college, whichever comes first.",
+            "Extensions may be considered on a case-by-case basis, but are not guaranteed.",
           ]
         },
         {
           title: "General Terms",
           bullets: [
-            "No cash value; payments made directly to providers",
-            "No direct disbursement of funds to recipients under any circumstance"
+            "This scholarship has no cash value",
+            "The Speedway Flight Training Scholarship Fund will make all payments directly to product and service providers.",
+            "No funds will be distributed directly to recipients under any circumstances.",
           ]
         }
       ]
