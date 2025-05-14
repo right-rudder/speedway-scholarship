@@ -31,7 +31,7 @@ export const navbarLinks = [
     },
     {
       name: "Apply now",
-      link: "/enroll",
+      link: "/apply",
       submenu: [],
     },
   ];
