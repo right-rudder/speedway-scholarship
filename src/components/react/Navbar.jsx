@@ -163,7 +163,7 @@ const Navbar = ({ pathname }) => {
                           {item.submenu.map((subitem, subIndex) => (
                             <li
                               key={subIndex}
-                              className={`${isActive(subitem, pathname) ? "bg-accent-100 text-primary-900" : ""} relative hover:bg-accent-900 hover:text-white hover:scale-105 px-1 hover:font-semibold hover:shadow-sm drop-shadow-sm font-medium`}
+                              className={`${isActive(subitem, pathname) ? "bg-accent-100 text-primary-900" : ""} relative hover:bg-primary-800 hover:text-white hover:scale-105 px-1 hover:font-semibold hover:shadow-sm drop-shadow-sm font-medium`}
                               onMouseEnter={() => setSubHoveredIndex(subIndex)}
                               onMouseLeave={() => setSubHoveredIndex(null)}
                             >

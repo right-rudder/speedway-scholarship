@@ -6,22 +6,24 @@ export const navbarLinks = [
       ],
     },
     {
+      name: "More",
+      link: "/#program",
+      submenu: [
+        {
+          name: "Requirements",
+          link: "/#requirements",
+        },
+        {
+          name: "Details",
+          link: "/#details",
+        },
+      ],
+    },
+    {
       name: "About",
       link: "/about",
       submenu: [
-        {
-          name: "Program",
-          link: "/#program",
-        },
-        {
-          name: "Eligibility",
-          link: "/#faq",
-        },],
-    },
-    {
-      name: "Donate",
-      link: "/donation",
-      submenu: [],
+      ],
     },
     {
       name: "Apply now",

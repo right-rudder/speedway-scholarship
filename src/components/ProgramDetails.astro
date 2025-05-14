@@ -1,9 +1,9 @@
 ---
-const {content, style} = Astro.props;
+const {content, style, id} = Astro.props;
 import Intro from "./Intro.astro";
 ---
 
-<Intro data={content} style={style}>
+<Intro data={content} style={style} id={id}>
     <div class="py-12 mx-auto">
         <!-- class="grid grid-cols-1 grid-row-3 gap-8 md:grid-cols-2 lg:grid-cols-2" -->
         <div class="flex flex-col flex-wrap gap-3 justify-center items-center ">
