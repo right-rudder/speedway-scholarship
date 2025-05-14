@@ -29,7 +29,7 @@ export const LOCATIONS = [
 
 // CHANGE client business info
 export const COMPANY_NAME = "Speedway Flight Training";
-export const PHONE_NUMBER = "";
+export const PHONE_NUMBER = "(678) 944-7379";
 export const ADDRESS_LINE_1 = "";
 export const ADDRESS_LINE_2 = "";
 export const FACEBOOK_URL = null;
@@ -49,5 +49,5 @@ export const AIRPORT_CODE = "";
 
 // Pages Data
 
-export const BANNER_TITLE = ``;
+export const BANNER_TITLE = `Dream • Train • Fly  |  Speedway Flight Training Scholarship Fund.`;
 
