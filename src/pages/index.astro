@@ -4,9 +4,11 @@ import HeaderScreen from "../components/HeaderScreen.astro";
 import UnderHeader from "../components/UnderHeader.astro";
 
 import homePage from "../data/pages/homePage";
+import { speedwayScholarship } from "../data/scholarshipData";
 
 import "/src/styles/global.css";
 import ProgramStructure from "../components/ProgramStructure.astro";
+import Requirements from "../components/Requirements.astro";
 
 const { data } = homePage;
 ---
@@ -20,7 +22,7 @@ const { data } = homePage;
   <HeaderScreen content={data.header} />
   <UnderHeader content={data.underHeader} />
   <ProgramStructure content={data.missionStatementSection} />
-
+  <Requirements content={speedwayScholarship.eligibility} />
   <!-- CONTENT -->
 
   <!-- CTA -->
