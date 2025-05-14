@@ -13,6 +13,10 @@ export const footerLinks = {
         link: "https://www.speedwayft.com",
       },
       {
+        name: "Donate",
+        link: "/donate",
+      },
+      {
         name: "Contact",
         link: "/contact-us",
       },

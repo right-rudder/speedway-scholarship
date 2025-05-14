@@ -22,7 +22,7 @@ const aboutPage = {
         },
         {
           name: "Donate",
-          link: "/donation",
+          link: "/donate",
           primary: true,
         },
       ],
@@ -40,7 +40,7 @@ const aboutPage = {
       buttons: [
         {
           text: "Support Future Aviators",
-          link: "/donations",
+          link: "/donate",
         },
       ],
     },

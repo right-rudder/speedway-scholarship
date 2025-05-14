@@ -6,7 +6,7 @@ export const navbarLinks = [
       ],
     },
     {
-      name: "Program",
+      name: "More",
       link: "/#program",
       submenu: [
         {
@@ -16,6 +16,10 @@ export const navbarLinks = [
         {
           name: "Details",
           link: "/#details",
+        },
+        {
+          name: "Donate",
+          link: "/donate",
         },
       ],
     },
