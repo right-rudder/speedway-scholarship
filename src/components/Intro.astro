@@ -1,0 +1,25 @@
+---
+const {data, style, id} = Astro.props;
+const standardClass= "text-white relative pt-16 mt-0 text-center lg:text-left z-10 flex flex-col items-center gap-4 px-5 h-full lg:pt-28 justify-center bg-mariner-800";
+---
+<!-- -->
+<section id={id} class={style || standardClass} >
+    <div class="mx-auto max-w-6xl lg:pr-4 md:px-10 lg:px-20">
+        <div class="my-9">
+            <p class="text-base font-semibold leading-7 text-primary-700 uppercase">
+            {data.upperHeading}
+            </p>
+            <h1
+            class="mt-0 text-3xl font-bold tracking-tight text-muted-100 sm:text-4xl"
+            >
+            {data.title}
+            </h1>
+            <p
+            class="mt-6 text-xl leading-8 text-muted-50 text-justify"
+            set:html={data.description}
+            />
+        </div>
+
+        <slot />
+    </div>
+</section>

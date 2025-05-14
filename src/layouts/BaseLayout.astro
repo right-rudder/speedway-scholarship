@@ -1,0 +1,42 @@
+---
+import BaseHead from "../components/base/BaseHead.astro";
+import Footer from "../components/base/Footer.astro";
+import Navbar from "../components/react/Navbar";
+import Banner from "../components/base/Banner.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, KEYWORDS, OG_IMAGE } from "../consts"; // first one to start, this are the default props for BaseHead
+// import "@fontsource-variable/inter";
+// import "@fontsource-variable/montserrat";
+const { pathname } = Astro.url;
+const { siteTitle, siteDescription, keywords, ogImage } = Astro.props; // this are local props (custom props for BaseHead one)
+//import ChatWidget from "../components/ChatWidget.astro";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <BaseHead
+      title={siteTitle || SITE_TITLE}
+      description={siteDescription || SITE_DESCRIPTION}
+      keywords={keywords || KEYWORDS}
+      image={ogImage || OG_IMAGE}
+    /> 
+  </head>
+  <body class="font-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src=""
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <Banner />
+    <Navbar pathname={pathname} client:load />
+    <main class="bg-mariner-900">
+      <slot />
+    </main>
+    <Footer />
+    <!-- <ChatWidget /> -->
+  </body>
+</html>

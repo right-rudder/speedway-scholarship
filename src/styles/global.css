@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply text-center tracking-wide font-sans2 font-bold text-xl lg:text-2xl uppercase py-3 px-6 bg-primary-700 w-fit h-fit text-accent-100 rounded-sm hover:bg-accent-200 hover:text-mariner-900 duration-300;
+  }
+
+  .btn-accent {
+    @apply text-center tracking-wide font-sans2 font-bold uppercase py-3 px-6 w-fit rounded-sm duration-300 bg-accent-100 text-mariner-950 text-xl hover:bg-mariner-950 hover:text-accent-100;
+  }
+
+  .btn-animate {
+    @apply hover:before:bg-black/30 relative overflow-hidden px-3 text-accent-100 transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full ease-in-out;
+  }
+  .btn-white {
+    @apply text-center font-bebas text-4xl uppercase font-bold py-3 px-6 ring-1 ring-white w-fit bg-black/10 hover:bg-black/80 hover:ring-white/50 hover:text-primary-950 text-primary-50 rounded-sm duration-300;
+  }
+
+  .paragraph {
+    @apply text-gray-600 lg:text-base leading-loose font-sans;
+  }
+
+  .tooltip {
+    @apply invisible opacity-0 absolute rounded-sm shadow-md shadow-slate-800/50 bg-gray-50 text-center text-gray-800;
+  }
+
+  .has-tooltip:hover .tooltip {
+    @apply visible opacity-95 transition-all duration-300 cursor-help;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply opacity-40 hover:opacity-80 duration-300 ease-in-out px-8 py-9 filter saturate-0;
+  }
+
+  p {
+    @apply font-sans2;
+  }
+
+  .CTA-flight-bg {
+    background-image: linear-gradient(to right, #a5acaf9f 0%, #a5acaf9f 100%),
+      url(../assets/Speedway-CTA-bg.webp);
+  }
+
+  .welcome-bg {
+    background-image: linear-gradient(to right, #a5acaf9f 0%, #a5acaf9f 100%),
+      url(../assets/Speedway-welcome-inside-plane.webp);
+  }
+
+  .object-left-30 {
+    object-position: 30%;
+  }
+
+  .object-left-40 {
+    object-position: 40%;
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(10px);
+  }  
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .fade-out {
+    background-image:linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.1) 50%, black 100%), linear-gradient(to right, black 0%, transparent 10%, transparent 90%, black 100%), url(../assets/bg-clouds-from-above.webp);
+  }
+
+  .bg-financing {
+    background-image: url(../assets/atlanta-airport-Speedway-Flight-Training-152.webp);
+    background-position: 70%;
+  }
+
+  .bg-two-cessna {
+    background-image:linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.1) 50%, black 100%), linear-gradient(to right, black 0%, transparent 10%, transparent 90%, black 100%), url(../assets/bg-clouds-from-above.webp);
+  }
+
+  .bg-checkered {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%), url(../assets/checkered-background-speedway-hampton-atlanta-cessna-flight-school.png);
+    z-index: -100;
+  }
+
+  .bg-checkered-navy {
+    background-image:linear-gradient(to top, #000c1af3 0%, #000c1af3 100%), url(../assets/checkered-background-speedway-hampton-atlanta-cessna-flight-school.png);
+    z-index: -100;
+  }
+
+  .bg-df-cta {
+    background-image:linear-gradient(to top, #000c1a3b 0%, #000c1a3b 100%), url(../assets/inside-cockpit-flight-training-speedway-ga.webp);
+  }
+
+  .bg-roadmap {
+    background-image:linear-gradient(to top, #000c1a0e 0%, #000c1a0e 100%), url(../assets/roadmap-racetrack.webp);
+    z-index: -100;
+  }
+
+  /* * {
+    border:1px solid red;
+  } */
+}
