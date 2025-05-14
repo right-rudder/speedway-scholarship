@@ -158,7 +158,7 @@ const Navbar = ({ pathname }) => {
                       )}
                       {item.submenu && item.submenu.length > 0 && (
                         <ul
-                          className={`absolute top-14 bg-black/90 border-b-4 border-black/20 whitespace-nowrap text-primary-50 -left-4 duration-200 ease-out ${hoveredIndex === index ? "max-h-auto w-auto opacity-100" : "max-h-0 h-0 opacity-0 overflow-hidden"}`}
+                          className={`absolute top-14 bg-mariner-900/90 border-b-4 border-mariner-900/20 whitespace-nowrap text-primary-50 -left-4 duration-200 ease-out ${hoveredIndex === index ? "max-h-auto w-auto opacity-100" : "max-h-0 h-0 opacity-0 overflow-hidden"}`}
                         >
                           {item.submenu.map((subitem, subIndex) => (
                             <li
@@ -302,7 +302,7 @@ const Navbar = ({ pathname }) => {
         </a>
 
         <div
-          className={`absolute w-full h-44 bg-black top-0 z-20 duration-300 ease-in-out  ${
+          className={`absolute w-full h-44 bg-mariner-900 top-0 z-20 duration-300 ease-in-out  ${
             openMobile
               ? "translate-y-0 opacity-90"
               : "translate-y-full opacity-0"
@@ -320,7 +320,7 @@ const Navbar = ({ pathname }) => {
                 <a
                   href={item.link}
                   target={`${item.link.includes("http") ? "_blank" : "_self"}`}
-                  className="font-bold p-5 block text-xl duration-300 text-primary-100 border-accent-900 whitespace-nowrap group-last:bg-black group-last:font-medium group-last:border-2 group-last:mt-12 group-last:py-4 group-last:px-8 group-last:rounded-full group-last:text-center group-last:mx-5"
+                  className="font-bold p-5 block text-xl duration-300 text-primary-100 border-accent-900 whitespace-nowrap group-last:bg-mariner-900 group-last:font-medium group-last:border-2 group-last:mt-12 group-last:py-4 group-last:px-8 group-last:rounded-full group-last:text-center group-last:mx-5"
                 >
                   {item.name}
                 </a>
@@ -398,7 +398,7 @@ const Navbar = ({ pathname }) => {
           <div className="flex gap-3 items-center text-white">
             <a
               href={`tel:${PHONE_NUMBER}`}
-              className="border p-2 w-fit border-accent-200 rounded-full bg-black"
+              className="border p-2 w-fit border-accent-200 rounded-full bg-mariner-900"
               aria-label={`Call us at ${PHONE_NUMBER}`}
             >
               <FaPhone className="size-4 text-white" />
