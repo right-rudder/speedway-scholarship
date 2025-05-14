@@ -100,6 +100,16 @@ export const speedwayScholarship = {
           ]
         },
         {
+          title: "Testing & Certifications",
+          imagePath: "",
+          imageAlt: "",
+          description: "",
+          bullets: [
+            "Pass a DOT-standard drug test before receiving Phase One materials",
+            "Obtain an FAA First Class Medical Certificate (at student’s expense) before beginning Phase Two"
+          ]
+        },
+        {
           title: "Zero-Tolerance Policy",
           imagePath: "",
           imageAlt: "",
@@ -109,16 +119,6 @@ export const speedwayScholarship = {
             "Pledge to remain drug- and alcohol-free",
             "Pledge to follow all traffic laws and regulations while operating a motor vehicle",
             "Violation may result in immediate termination of the scholarship and loss of remaining benefits"
-          ]
-        },
-        {
-          title: "Testing & Certifications",
-          imagePath: "",
-          imageAlt: "",
-          description: "",
-          bullets: [
-            "Pass a DOT-standard drug test before receiving Phase One materials",
-            "Obtain an FAA First Class Medical Certificate (at student’s expense) before beginning Phase Two"
           ]
         },
         {
