@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderScreen from "../components/HeaderScreen.astro";
+import UnderHeader from "../components/UnderHeader.astro";
+
+import aboutPage from "../data/pages/aboutPage";
+import { speedwayScholarship } from "../data/scholarshipData";
+import Mission from "../components/Mission.astro";
+import "/src/styles/global.css";
+
+const { data } = aboutPage;
+---
+
+<BaseLayout
+  siteTitle={data.pageTitle}
+  siteDescription={data.pageDescription}
+  keywords={data.pageKeywords}
+>
+  <!-- HEADER -->
+  <HeaderScreen content={data.header} />
+  <!-- <UnderHeader content={data.underHeader} /> -->
+  <!-- CONTENT -->
+  <Mission content={speedwayScholarship.about} />
+  <!-- CTA -->
+
+</BaseLayout>
