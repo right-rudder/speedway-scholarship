@@ -10,6 +10,7 @@ import "/src/styles/global.css";
 import ProgramStructure from "../components/ProgramStructure.astro";
 import Requirements from "../components/Requirements.astro";
 import ProgramDetails from "../components/ProgramDetails.astro";
+import FAQ from "../components/FAQ.astro";
 
 const { data } = homePage;
 ---
@@ -26,6 +27,7 @@ const { data } = homePage;
   <ProgramStructure content={data.missionStatementSection} />
   <Requirements content={speedwayScholarship.eligibility} />
   <ProgramDetails content={speedwayScholarship.awardDetails} />
+  <FAQ content={data.frequentQuestions} />
   <!-- CTA -->
 
 </BaseLayout>

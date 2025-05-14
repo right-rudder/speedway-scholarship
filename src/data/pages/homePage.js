@@ -45,6 +45,66 @@ const homePage = {
       ],
     },
 
+    
+    frequentQuestions: {
+      upperHeading: "FAQs",
+      title: 'Frequently Asked Questions',
+      description: 'Find answers to common questions about eligibility, training, and program requirements.',
+      questions: [
+        {
+          question: 'Who is eligible to apply?',
+          answer: 'College-bound high school juniors and seniors with financial need and a passion for aviation. Awards are granted regardless of race, gender, or religious background.'
+        },
+        {
+          question: 'What are the age requirements?',
+          answer: 'You must be 16 by your solo flight (Phase Two) and 17 before completing your Private Pilot Certificate (Phase Three).'
+        },
+        {
+          question: 'What does the scholarship cover?',
+          answer: 'All costs for your FAA Private Pilot Certificate: study materials, flight hours (up to 50), FAA exam fees, and mentorship. No cash is distributed directly.'
+        },
+        {
+          question: 'What happens if I fail the FAA Knowledge Test?',
+          answer: "You get 3 attempts within 60 days. If unsuccessful, you'll need to reapply in the next cycle.",
+        },
+        {
+          question: 'What is the zero-tolerance policy?',
+          answer: 'Recipients pledge to stay drug/alcohol-free and follow all traffic laws. Violations result in immediate scholarship termination.'
+        },
+        {
+          question: 'Do I need to pass a drug test?',
+          answer: 'Yes—a DOT-standard drug test is required before starting Phase One.'
+        },
+        {
+          question: 'Can I get an extension beyond 18 months?',
+          answer: 'Extensions are rare and reviewed case-by-case. All training must finish before your college freshman year.'
+        },
+        {
+          question: 'Who pays for transportation to Atlanta Speedway Airport?',
+          answer: 'Students arrange their own transportation. Carpooling options are often available through the program.'
+        },
+        {
+          question: 'What happens if I miss a flight lesson?',
+          answer: 'Cancel at least 24 hours in advance. Three no-shows may forfeit your scholarship.'
+        },
+        {
+          question: 'What materials are included in Phase One?',
+          answer: 'The Gleim Aviation Deluxe Private Pilot Kit, including online ground school, FAA test prep, flight computer, logbook, and all required study materials.'
+        },
+        {
+          question: 'Is the FAA Medical Certificate included?',
+          answer: 'No, students must obtain their First Class Medical Certificate at their own expense before Phase Two.'
+        }
+      ],
+      buttons: [
+        {
+          name: 'Contact Us',
+          link: '/contact-us',
+          primary: true
+        }
+      ]
+    },
+
     missionStatementSection: {
       upperHeading: "Start here",
       title: "Opening Doors for Aspiring Pilots",
