@@ -84,10 +84,15 @@ export const speedwayScholarship = {
     },
   
     eligibility: {
+      upperHeading: "Requirements",
       title: "Eligibility & Program Requirements",
+      description: "To ensure the safety, success, and professionalism of all recipients, the following conditions apply:",
       subSections: [
         {
           title: "Eligibility Criteria",
+          imagePath: "",
+          imageAlt: "",
+          description: "",
           bullets: [
             "Open to high school juniors and seniors who are college-bound",
             "Must be at least 16 years old by the time of solo flight and 17 by certification",
@@ -96,6 +101,10 @@ export const speedwayScholarship = {
         },
         {
           title: "Zero-Tolerance Policy",
+          imagePath: "",
+          imageAlt: "",
+          // description: "Aviation requires exceptional responsibility and character. All recipients must:",
+          description: "Violation of this pledge may result in immediate termination of the scholarship and loss of any remaining benefits.",
           bullets: [
             "Pledge to remain drug- and alcohol-free",
             "Pledge to follow all traffic laws and regulations while operating a motor vehicle",
@@ -104,6 +113,9 @@ export const speedwayScholarship = {
         },
         {
           title: "Testing & Certifications",
+          imagePath: "",
+          imageAlt: "",
+          description: "",
           bullets: [
             "Pass a DOT-standard drug test before receiving Phase One materials",
             "Obtain an FAA First Class Medical Certificate (at student’s expense) before beginning Phase Two"
@@ -111,9 +123,13 @@ export const speedwayScholarship = {
         },
         {
           title: "Transportation & Attendance",
+          imagePath: "",
+          imageAlt: "",
+          description: "Three or more no-shows may result in the forfeiture of the scholarship.",
           bullets: [
-            "Responsible for transportation to and from Atlanta Speedway Airport",
+            "Students are responsible for transportation to and from Atlanta Speedway Airport",
             "Students and a parent/guardian must sign a release of liability waiver before Phase Two",
+            "Timeliness and professionalism are expected",
             "Arrive at least 15 minutes early for all scheduled lessons",
             "Cancel any session at least 24 hours in advance (3 no-shows may forfeit scholarship)"
           ]
