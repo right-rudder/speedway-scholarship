@@ -2,7 +2,7 @@ export const PLACEHOLDER_PERSON = { imagePath: "/src/assets/placeholder-person.j
 export const PLACEHOLDER = { imagePath: "/src/assets/placeholder.jpg", imageAlt: " ", };
 export const RRM_TEXT_BLACK = { imagePath: "/src/assets/RRM-hor-textBlack-bgTrans-150.webp", imageAlt: " ", };
 export const RRM_R_SYMBOL = { imagePath: "/src/assets/RRM-R-symbol-474.webp", imageAlt: " ", };
-export const LOGO_WRITTEN = { imagePath: "/speedway-flight-training-written-logo.png", imageAlt: " ", };
+export const LOGO_WRITTEN = { imagePath: "/src/assets/Speedway_schlarship_fund_logo.png", imageAlt: " ", };
 export const LOGO = { imagePath: "/speedway-flight-training-hampton-georgia-logo-red.png", imageAlt: " ", };
 
 export const BLAKE_GUIDRY = { imagePath: "/src/assets/blake-guidry-UOJ6vz2khrY-unsplash.jpg", imageAlt: "Photo by Blake Guidry" };
