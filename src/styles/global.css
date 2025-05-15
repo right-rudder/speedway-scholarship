@@ -19,11 +19,11 @@
   }
 
   .paragraph {
-    @apply text-gray-600 lg:text-base leading-loose font-sans;
+    @apply text-muted-100 lg:text-base leading-loose font-sans;
   }
 
   .tooltip {
-    @apply invisible opacity-0 absolute rounded-sm shadow-md shadow-slate-800/50 bg-gray-50 text-center text-gray-800;
+    @apply invisible opacity-0 absolute rounded-sm shadow-md shadow-slate-800/50 bg-muted-50 text-center text-muted-800;
   }
 
   .has-tooltip:hover .tooltip {
