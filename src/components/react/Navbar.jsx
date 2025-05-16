@@ -13,7 +13,8 @@ import {
   YOUTUBE_URL,
 } from "../../consts";
 
-import { LOGO_WRITTEN as imgCompanyLogo } from "../../constsImages.js";
+import { SPEEDWAY_SCHOLARSHIP_LOGO_SEMI_TRANSPARENT as imgCompanyLogo } from "../../constsImages.js";
+// import imgCompanyLogo from "../Speedway_schlarship_fund_logo.png";
 
 const Navbar = ({ pathname }) => {
   const [openMobile, setOpenMobile] = useState(false);
@@ -124,10 +125,10 @@ const Navbar = ({ pathname }) => {
                 className="relative hover:brightness-110 duration-200 ease-in-out w-full md:w-1/3 lg:w-2/12 px-1 py-1"
               >
                 <img
-                  src={imgCompanyLogo.imagePath}
-                  alt={imgCompanyLogo.imageAlt}
-                  aria-label={imgCompanyLogo.arialLabel}
-                  title={imgCompanyLogo.title}
+                  src="/Speedway_schlarship_fund_logo.png"
+                  alt=""
+                  aria-label="Speedway Scholarship Fund Logo" // Descriptive aria-label
+                  title="Speedway Scholarship Fund Logo"
                   loading="eager"
                   className={`${navBar || openMobile ? "h-16 lg:h-24 lg:w-2/3" : "h-16 lg:h-24 w-full"} mx-auto object-contain duration-500`}
                 />
@@ -293,8 +294,8 @@ const Navbar = ({ pathname }) => {
           className="z-30 relative flex justify-center items-center align-middle"
         >
           <img
-            src={imgCompanyLogo.imagePath}
-            alt={imgCompanyLogo.imageAlt}
+            src={imgCompanyLogo}
+            alt=""
             aria-label="  Logo"
             title=" "
             className="object-contain h-20 w-auto drop-shadow-sm"
