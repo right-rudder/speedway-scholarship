@@ -57,7 +57,7 @@ const homePage = {
         },
         {
           question: 'What are the age requirements?',
-          answer: 'You must be 16 by your solo flight (Phase Two) and 17 before completing your Private Pilot Certificate (Phase Three).'
+          answer: 'You must be 16 by your solo flight (Phase Two) and 19 by your certification before completing your Private Pilot Certificate (Phase Three).'
         },
         {
           question: 'What does the scholarship cover?',
@@ -65,7 +65,7 @@ const homePage = {
         },
         {
           question: 'What happens if I fail the FAA Knowledge Test?',
-          answer: "You get 3 attempts within 60 days. If unsuccessful, you'll need to reapply in the next cycle.",
+          answer: "You get 3 attempts within 60 days.",
         },
         {
           question: 'What is the zero-tolerance policy?',
@@ -81,7 +81,7 @@ const homePage = {
         },
         {
           question: 'Who pays for transportation to Atlanta Speedway Airport?',
-          answer: 'Students arrange their own transportation. Carpooling options are often available through the program.'
+          answer: 'Students arrange their own transportation.'
         },
         {
           question: 'What happens if I miss a flight lesson?',

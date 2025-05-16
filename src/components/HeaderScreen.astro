@@ -14,7 +14,7 @@ if (!images[content.imagePath]) {
 ---
 
 <header
-  class="relative lg:mt-0 min-h-[90vh] py-20 h-fit bg-gray-800 text-white flex flex-col items-center justify-center overflow-hidden"
+  class="relative lg:mt-0 min-h-[90vh] py-20 h-fit bg-muted-800 text-white flex flex-col items-center justify-center overflow-hidden"
 >
   <Image
     src={images[content.imagePath]()}
@@ -44,7 +44,7 @@ if (!images[content.imagePath]) {
       )
     }
     <h1
-      class="text-4xl md:text-5xl lg:text-6xl max-w-6xl drop-shadow-lg xl:text-7xl text-center font-bold uppercase tracking-wide text-gray-100 animate-slow-fade"
+      class="text-4xl md:text-5xl lg:text-6xl max-w-6xl drop-shadow-lg xl:text-7xl text-center font-bold uppercase tracking-wide text-muted-100 animate-slow-fade"
       set:html={content.headerH1}
     />
     <h2

@@ -104,8 +104,8 @@ export const speedwayScholarship = {
           imageAlt: "",
           description: "",
           bullets: [
-            "Open to high school juniors and seniors who are college-bound",
-            "Must be at least 16 years old by the time of solo flight and 17 by certification",
+            "Open to high school juniors and seniors who are college-bound and planning on enrolling in an aviation degree program",
+            "Must be at least 16 years old by the time of solo flight and 19 by certification",
             "Prepared to identify the college or university they plan to attend"
           ]
         },
@@ -116,7 +116,7 @@ export const speedwayScholarship = {
           description: "",
           bullets: [
             "Pass a DOT-standard drug test before receiving Phase One materials",
-            "Obtain an FAA First Class Medical Certificate (at student’s expense) before beginning Phase Two"
+            "Obtain an FAA First Class Medical Certificate before beginning Phase Two"
           ]
         },
         {
@@ -126,7 +126,7 @@ export const speedwayScholarship = {
           // description: "Aviation requires exceptional responsibility and character. All recipients must:",
           description: "Violation of this pledge may result in immediate termination of the scholarship and loss of any remaining benefits.",
           bullets: [
-            "Pledge to remain drug- and alcohol-free",
+            "Pledge to remain drug and alcohol-free",
             "Pledge to follow all traffic laws and regulations while operating a motor vehicle",
             "Violation may result in immediate termination of the scholarship and loss of remaining benefits"
           ]
