@@ -54,6 +54,7 @@ export const speedwayScholarship = {
       phases: [
         {
           title: "Phase One: FAA Knowledge Test Preparation",
+          id: "test",
           imagePath: imgTestPhase.imagePath,
           imageAlt: imgTestPhase.imageAlt,
           description: [
@@ -68,6 +69,7 @@ export const speedwayScholarship = {
         },
         {
           title: "Phase Two: First Solo Flight",
+          id: "solo-flight",
           description: [
             "Upon passing the knowledge exam, recipients will receive aircraft rental, ground school, and flight instruction at Atlanta Speedway Airport in Hampton, GA.",
             "Students must complete their first solo flight within 15 logged flight hours to progress to the final phase."
@@ -80,6 +82,7 @@ export const speedwayScholarship = {
         },
         {
           title: "Phase Three: Private Pilot Certification",
+          id: "private-pilot-certification",
           description: [
             "Once the first solo is completed, students will receive continued aircraft rental and instruction, with coverage of final certification testing fees.",
             "Funding includes up to 50 flight hours, with a possible 10-hour extension in exceptional cases (max 60 hours)."

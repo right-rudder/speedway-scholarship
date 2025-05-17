@@ -115,17 +115,17 @@ const homePage = {
         {
           title: "Master the Basics <br> (FAA Knowledge Test)",
           description: "",
-          link: "#",
+          link: "#test",
         },
         {
           title: "Take Control  <br> (First Solo Flight)",
           description: "Earn Your Wings (Private Pilot Certification)",
-          link: "#",
+          link: "#solo-flight",
         },
         {
           title: "Earn Your Wings <br> (Private Pilot Certification)",
           description: "",
-          link: "#",
+          link: "#private-pilot-certification",
           
         },
       ],
