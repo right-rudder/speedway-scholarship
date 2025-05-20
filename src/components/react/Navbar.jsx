@@ -125,7 +125,7 @@ const Navbar = ({ pathname }) => {
                 className="relative hover:brightness-110 duration-200 ease-in-out w-full md:w-1/3 lg:w-2/12 px-1 py-1"
               >
                 <img
-                  src="/Speedway_schlarship_fund_logo.png"
+                  src="/speedway_scholarship_logo_no_background.png"
                   alt=""
                   aria-label="Speedway Scholarship Fund Logo" // Descriptive aria-label
                   title="Speedway Scholarship Fund Logo"

@@ -17,7 +17,7 @@ export const WESTWIND_AIR_SERVICE = { imagePath: "/src/assets/westwind-air-servi
 export const MENTOR_PILOT_SHAKING_HANDS_WITH_STUDENT = {imagePath:"/src/assets/A_mentor_pilot_shaking_hands_with_a_student_while_holding_scholarship_paperwork,_with_a_plane_in_the_background.png" , imageAlt: "A mentor pilot shaking hands with a student while holding scholarship paperwork, with a plane in the background"};
 export const PILOT_STUDENT_DOING_CHECKLIST_ON_PLANE = {imagePath:"/src/assets/A_close-up_of_a_student_pilot_in_a_crisp_white_shirtepaulets_performing_a_pre-flight_inspection_on_a_plane,_checklist_in_hand_2.png" , imageAlt: "A close-up of a student pilot in a crisp white performing a pre-flight inspection on a plane, checklist in hand"};
 
-export const SPEEDWAY_SCHOLARSHIP_LOGO_ALL_TRANSPARENT = {imagePath:"/src/assets/speedway_scholarship_logo_all_transparent.png", imgAlt:"Speedway Scholarship Fund Logo",};
-export const SPEEDWAY_SCHOLARSHIP_LOGO_NO_BACKGROUND = {imagePath:"/src/assets/speedway_scholarship_logo_no_background.png", imgAlt:"Speedway Scholarship Fund Logo",};
-export const SPEEDWAY_SCHOLARSHIP_LOGO_ORIGINAL = {imagePath:"/src/assets/speedway_scholarship_logo_original.png", imgAlt:"Speedway Scholarship Fund Logo"};
-export const SPEEDWAY_SCHOLARSHIP_LOGO_SEMI_TRANSPARENT = {imagePath:"/src/assets/speedway_scholarship_logo_semi_transparent.png", imgAlt:"Speedway Scholarship Fund Logo"};
+export const SPEEDWAY_SCHOLARSHIP_LOGO_ALL_TRANSPARENT = {imagePath:"/src/assets/speedway_scholarship_logo_all_transparent.png", imageAlt:"Speedway Scholarship Fund Logo",};
+export const SPEEDWAY_SCHOLARSHIP_LOGO_NO_BACKGROUND = {imagePath:"/src/assets/speedway_scholarship_logo_no_background.png", imageAlt:"Speedway Scholarship Fund Logo",};
+export const SPEEDWAY_SCHOLARSHIP_LOGO_ORIGINAL = {imagePath:"/src/assets/speedway_scholarship_logo_original.png", imageAlt:"Speedway Scholarship Fund Logo"};
+export const SPEEDWAY_SCHOLARSHIP_LOGO_SEMI_TRANSPARENT = {imagePath:"/src/assets/speedway_scholarship_logo_semi_transparent.png", imageAlt:"Speedway Scholarship Fund Logo"};
