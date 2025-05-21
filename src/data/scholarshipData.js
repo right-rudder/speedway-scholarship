@@ -123,7 +123,7 @@ export const speedwayScholarship = {
           ]
         },
         {
-          title: "Zero-Tolerance Policy",
+          title: "Code of Conduct",
           imagePath: "",
           imageAlt: "",
           // description: "Aviation requires exceptional responsibility and character. All recipients must:",

@@ -9,7 +9,7 @@ import {
   SITE_DESCRIPTION,
 } from "../../consts";
 import { footerLinks } from "../../data/footerLinks";
-import { LOGO_WRITTEN as logo } from "../../constsImages";
+import { SPEEDWAY_SCHOLARSHIP_LOGO_SEMI_TRANSPARENT as logo } from "../../constsImages";
 import { Image } from "astro:assets";
 import ImageComp from "../utils/ImageComp.astro";
 import { COMPANY_NICKNAME } from "../../consts";
@@ -31,7 +31,7 @@ const { pathname } = Astro.url;
             <ImageComp
             imagePath={logo.imagePath}
             imageAlt={logo.imageAlt}
-            styles="object-contain h-24 w-auto px-5 lg:px-0 drop-shadow-lg"
+            styles="object-contain h-48 w-auto px-5 lg:px-0 drop-shadow-lg"
             loading = "lazy"
             />
         </a>

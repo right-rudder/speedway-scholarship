@@ -68,7 +68,7 @@ const homePage = {
           answer: "You get 3 attempts within 60 days.",
         },
         {
-          question: 'What is the zero-tolerance policy?',
+          question: 'What is the Code of Conduct?',
           answer: 'Recipients pledge to stay drug/alcohol-free and follow all traffic laws. Violations result in immediate scholarship termination.'
         },
         {
