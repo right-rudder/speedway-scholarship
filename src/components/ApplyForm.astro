@@ -40,8 +40,38 @@ const ENROLL_FORM_WEBHOOK_URL = import.meta.env.ENROLL_WEBHOOK_URL;
         />
       </div>
     </div>
+    <!-- DATE OF BIRTH -->
     <div class="sm:col-span-2">
-      <!-- EMAIL -->
+      <!-- <label for="date-of-birth" class="block text-sm leading-6 text-accent-100">Date of Birth</label> -->
+      <div class="mt-2.5">
+        <input
+          type="date"
+          name="date-of-birth"
+          id="date-of-birth"
+          autocomplete="bday"
+          placeholder="Date of Birth"
+          required
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+    <!-- ADDRESS -->
+    <div class="sm:col-span-2">
+      <!-- <label for="address" class="block text-sm leading-6 text-accent-100">Address</label> -->
+      <div class="mt-2.5">
+        <input
+          type="text"
+          name="address"
+          id="address"
+          autocomplete="street-address"
+          placeholder="Address"
+          required
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+    <!-- EMAIL -->
+    <div class="sm:col-span-2">
       <!-- <label for="email" class="block text-sm leading-6 text-accent-100">Email</label> -->
       <div class="mt-2.5">
         <input
@@ -60,8 +90,8 @@ const ENROLL_FORM_WEBHOOK_URL = import.meta.env.ENROLL_WEBHOOK_URL;
         Don't fill this out if you're human: <input name="confirm-email" />
       </label>
     </p>
-    <div class="sm:col-span-2">
     <!-- PHONE NUMBER -->
+    <div class="sm:col-span-2">
       <!-- <label for="phone-number" class="block text-sm leading-6 text-accent-100">Phone number</label> -->
       <div class="relative mt-2.5">
         <input
@@ -75,7 +105,281 @@ const ENROLL_FORM_WEBHOOK_URL = import.meta.env.ENROLL_WEBHOOK_URL;
         />
       </div>
     </div>
-    
+
+    <!-- CITIZENSHIP STATUS -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Citizenship Status</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="us-citizen" name="citizenship-status" type="radio" value="U.S. Citizen" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="us-citizen" class="ml-2 block text-sm text-muted-100">U.S. Citizen</label>
+          </div>
+          <div class="flex items-center">
+            <input id="permanent-resident" name="citizenship-status" type="radio" value="Permanent Resident" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="permanent-resident" class="ml-2 block text-sm text-muted-100">Permanent Resident</label>
+          </div>
+          <div class="flex items-center">
+            <input id="other-citizenship" name="citizenship-status" type="radio" value="Other" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="other-citizenship" class="ml-2 block text-sm text-muted-100">Other:</label>
+          </div>
+        </div>
+        <div class="mt-1">
+          <input
+            type="text"
+            name="citizenship-other-details"
+            id="citizenship-other-details"
+            placeholder="Please specify if Other"
+            aria-label="Specify other citizenship details"
+            class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none mt-1"
+          />
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Education Information Section Header -->
+    <div class="sm:col-span-2 mt-6 mb-1">
+      <h3 class="text-lg font-semibold text-accent-100 border-b border-muted-300 pb-2">Education Information</h3>
+    </div>
+
+    <!-- CURRENT SCHOOL -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <input
+          type="text"
+          name="current-school"
+          id="current-school"
+          placeholder="Current School (if applicable)"
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- HIGHEST LEVEL OF EDUCATION COMPLETED -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <input
+          type="text"
+          name="highest-education"
+          id="highest-education"
+          placeholder="Highest Level of Education Completed"
+          required
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- GPA -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <input
+          type="text"
+          name="gpa"
+          id="gpa"
+          placeholder="GPA"
+          required
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- CURRENTLY ENROLLED IN FLIGHT TRAINING PROGRAM -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Are you currently enrolled in a flight training program?</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="enrolled-yes" name="currently-enrolled" type="radio" value="Yes" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="enrolled-yes" class="ml-2 block text-sm text-muted-100">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input id="enrolled-no" name="currently-enrolled" type="radio" value="No" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="enrolled-no" class="ml-2 block text-sm text-muted-100">No</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- NAME OF SCHOOL (IF ENROLLED) -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <input
+          type="text"
+          name="enrollment-school-name"
+          id="enrollment-school-name"
+          placeholder="If yes, name of the school"
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        />
+      </div>
+    </div>
+
+    <!-- Aviation Background Section Header -->
+    <div class="sm:col-span-2 mt-6 mb-1">
+      <h3 class="text-lg font-semibold text-accent-100 border-b border-muted-300 pb-2">Aviation Background</h3>
+    </div>
+
+    <!-- EVER HAD FLIGHT TRAINING -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Have you ever had flight training?</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="flight-training-yes" name="had-flight-training" type="radio" value="Yes" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="flight-training-yes" class="ml-2 block text-sm text-muted-100">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input id="flight-training-no" name="had-flight-training" type="radio" value="No" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="flight-training-no" class="ml-2 block text-sm text-muted-100">No</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- FLOWN SOLO -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Have you flown solo?</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="flown-solo-yes" name="flown-solo" type="radio" value="Yes" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="flown-solo-yes" class="ml-2 block text-sm text-muted-100">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input id="flown-solo-no" name="flown-solo" type="radio" value="No" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="flown-solo-no" class="ml-2 block text-sm text-muted-100">No</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- FAA KNOWLEDGE TEST -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Have you completed the FAA knowledge test for the Private Pilot License?</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="faa-test-yes" name="faa-knowledge-test" type="radio" value="Yes" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="faa-test-yes" class="ml-2 block text-sm text-muted-100">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input id="faa-test-no" name="faa-knowledge-test" type="radio" value="No" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="faa-test-no" class="ml-2 block text-sm text-muted-100">No</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- AVIATION EXPLANATION -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="aviation-explanation" class="block text-sm leading-6 text-accent-100 mb-1">Please explain your aviation background, goals, and why you are applying for this scholarship:</label>
+        <textarea
+          name="aviation-explanation"
+          id="aviation-explanation"
+          rows="4"
+          placeholder="Your explanation here..."
+          required
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Scholarship Details Section Header -->
+    <div class="sm:col-span-2 mt-6 mb-1">
+      <h3 class="text-lg font-semibold text-accent-100 border-b border-muted-300 pb-2">Scholarship Details</h3>
+    </div>
+
+    <!-- RECEIVED OTHER FINANCIAL ASSISTANCE -->
+    <div class="sm:col-span-2">
+      <fieldset class="mt-2.5">
+        <legend class="block text-sm font-medium leading-6 text-accent-100 mb-2">Have you received other financial assistance for flight training?</legend>
+        <div class="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-6">
+          <div class="flex items-center">
+            <input id="financial-assistance-yes" name="financial-assistance" type="radio" value="Yes" required class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="financial-assistance-yes" class="ml-2 block text-sm text-muted-100">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input id="financial-assistance-no" name="financial-assistance" type="radio" value="No" class="h-4 w-4 border-muted-300 text-primary-700 focus:ring-primary-700">
+            <label for="financial-assistance-no" class="ml-2 block text-sm text-muted-100">No</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- FINANCIAL ASSISTANCE EXPLANATION -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="financial-assistance-explanation" class="block text-sm leading-6 text-accent-100 mb-1">If yes, please explain:</label>
+        <textarea
+          name="financial-assistance-explanation"
+          id="financial-assistance-explanation"
+          rows="3"
+          placeholder="Details about other financial assistance..."
+          class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Essay Questions Section Header -->
+    <div class="sm:col-span-2 mt-6 mb-1">
+      <h3 class="text-lg font-semibold text-accent-100 border-b border-muted-300 pb-2">Essay Questions <span class="text-sm font-normal text-muted-100">(Attach additional pages if necessary)</span></h3>
+    </div>
+
+    <!-- ESSAY QUESTION 1 -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="essay-goals" class="block text-sm leading-6 text-accent-100 mb-1">1. Describe your aviation goals and how this scholarship will help you achieve them.</label>
+        <textarea name="essay-goals" id="essay-goals" rows="5" required class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"></textarea>
+      </div>
+    </div>
+
+    <!-- ESSAY QUESTION 2 -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="essay-leadership" class="block text-sm leading-6 text-accent-100 mb-1">2. Tell us about a time you demonstrated leadership, integrity, or perseverance.</label>
+        <textarea name="essay-leadership" id="essay-leadership" rows="5" required class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"></textarea>
+      </div>
+    </div>
+
+    <!-- ESSAY QUESTION 3 -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="essay-why-aviation" class="block text-sm leading-6 text-accent-100 mb-1">3. Why did you choose aviation, and what does being a pilot mean to you?</label>
+        <textarea name="essay-why-aviation" id="essay-why-aviation" rows="5" required class="block w-full py-2 text-accent-100 shadow-sm ring-inset ring-muted-300 placeholder:text-muted-100 bg-transparent border-b-[1px] border-muted-300 sm:text-sm sm:leading-6 outline-none"></textarea>
+      </div>
+    </div>
+
+    <!-- Supporting Documents Section Header -->
+    <div class="sm:col-span-2 mt-6 mb-1">
+      <h3 class="text-lg font-semibold text-accent-100 border-b border-muted-300 pb-2">Supporting Documents</h3>
+    </div>
+
+    <!-- SUPPORTING DOCUMENTS LIST -->
+    <div class="sm:col-span-2 mt-2.5 text-sm text-muted-100">
+      <p class="mb-2 text-accent-100">Please upload the following documents (you can select multiple files):</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>One letter of recommendation (preferably from a teacher, employer, or flight instructor)</li>
+        <li>Copy of your most recent transcript (if applicable)</li>
+        <li>Résumé or summary of aviation experience</li>
+        <li>Financial need statement (a brief explanation of your financial situation and why you need this scholarship)</li>
+        <li>Copy of a valid government-issued photo ID</li>
+      </ul>
+    </div>
+
+    <!-- FILE UPLOAD FOR SUPPORTING DOCUMENTS -->
+    <div class="sm:col-span-2">
+      <div class="mt-2.5">
+        <label for="supporting-documents" class="block text-sm leading-6 text-accent-100 mb-1 sr-only">Upload Supporting Documents</label>
+        <input
+          type="file"
+          name="supporting-documents[]" 
+          id="supporting-documents"
+          multiple
+          class="block w-full text-sm text-muted-100 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary-700 file:text-accent-100 hover:file:bg-primary-600 cursor-pointer"
+        />
+      </div>
+    </div>
+
     <!-- CHOOSE PROGRAM  -->
     <!-- <div class="sm:col-span-2">
       <div class="mt-2.5">
@@ -137,7 +441,7 @@ const ENROLL_FORM_WEBHOOK_URL = import.meta.env.ENROLL_WEBHOOK_URL;
       </div>
       <label class="text-sm leading-6 text-muted-100" id="switch-1-label">
         I agree to the <a href="/privacy-policy" target="_blank" class="text-primary-700 hover:text-mariner-700 font-semibold">Privacy Policy</a> and <a href="/terms-of-service" target="_blank" class="text-primary-700 hover:text-mariner-700 font-semibold">Terms of Service</a> provided by the company.
-        By providing my phone number, I agree to receive text messages from the business.
+        I certify that the information provided in this application is accurate and complete. I understand that providing false information may disqualify me from receiving this scholarship. 
       </label>
     </div>
   </div>
