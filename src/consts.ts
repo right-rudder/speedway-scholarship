@@ -10,7 +10,7 @@ export const SITE_DESCRIPTION = "";
 // CHANGE default keywords -> should only be used in homepage technically, but is there for a fallback in case a page is missed
 export const KEYWORDS = "";
 
-export const OG_IMAGE = "/";
+export const OG_IMAGE = "/speedway_scholarship_logo_no_background.png";
 
 export const GEO_LATITUDE = 12.12345678901234;
 export const GEO_LONGITUDE = -12.12345678901234;
@@ -29,7 +29,7 @@ export const LOCATIONS = [
 
 // CHANGE client business info
 
-export const COMPANY_NAME = "Speedway Flight Training";
+export const COMPANY_NAME = "Speedway Flight Training Scholarship Fund.";
 export const COMPANY_NAME_CAPS = "SPEEDWAY FLIGHT TRAINING";
 export const COMPANY_NICKNAME = "Speedway";
 export const LOGO_PRIMARY = "/speedway-flight-training-written-logo.png";
@@ -44,7 +44,7 @@ export const ADDRESS_CITY = "Hampton";
 export const ADDRESS_STATE = "Georgia";
 export const ADDRESS_ZIP = "30228";
 export const GMAPS = "https://maps.app.goo.gl/jgGYGrkLEd8Mjuu19";
-export const EMAIL_ADDRESS = "info@SpeedwayFT.com";
+export const EMAIL_ADDRESS = "info@speedwayscholarship.com";
 export const FACEBOOK_URL ="https://www.facebook.com/people/Speedway-Flight-Training/61574840653146/#";
 export const INSTAGRAM_URL ="https://www.instagram.com/speedway_flight_training/";
 export const LINKEDIN_URL = null;
