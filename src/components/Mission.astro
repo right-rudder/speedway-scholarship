@@ -1,5 +1,12 @@
 ---
 const { content } = Astro.props;
+import ImageComp from "./utils/ImageComp.astro";
+import { 
+  RAYYU_MALDIVES as imgTestPhase,
+  MENTOR_PILOT_SHAKING_HANDS_WITH_STUDENT as imgAboutMission,
+  PILOT_STUDENT_DOING_CHECKLIST_ON_PLANE  as imgAboutCommitment,
+} from "../constsImages";
+
 ---
 
 <section id="about" class="text-white relative pt-16 mt-0 text-center lg:text-left z-10 flex flex-col items-center gap-4 px-5 h-full lg:pt-28 justify-center bg-mariner-800">
@@ -48,7 +55,15 @@ const { content } = Astro.props;
                 </div>
                 <!-- Image -->
                 <div class="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center ">
-                    <img class="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl " src={content.commitment.imagePath} alt={content.commitment.imageAlt}>
+                    <!-- <img class="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl " src={content.commitment.imagePath} alt={content.commitment.imageAlt}> -->
+                    <ImageComp 
+                        style="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl"
+                        imagePath={imgAboutMission.imagePath}
+                        imageAlt={imgAboutMission.imageAlt}
+                        loading="Lazy"
+                        widths={[240, 540, 720, 1080, 1440, 1980]}
+                        sizes={`(max-width: 240px) 240px, (max-width: 540px) 540px, (max-width: 720px) 720px, (max-width: 1080px) 1080px, (max-width: 1440px) 1440px, 1920px`}
+                    />
                 </div>
             </div>
 
@@ -104,7 +119,15 @@ const { content } = Astro.props;
                 </div>
                 <!-- Image -->
                 <div class="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center ">
-                    <img class="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl " src={content.missionStatement.imagePath} alt={content.missionStatement.imageAlt}>
+                    <!-- <img class="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl " src={imgAboutCommitment.imagePath} alt={imgAboutCommitment.imageAlt}> -->
+                    <ImageComp 
+                        style="w-[22rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-2xl"
+                        imagePath={imgAboutCommitment.imagePath}
+                        imageAlt={imgAboutCommitment.imageAlt}
+                        loading="Lazy"
+                        widths={[240, 540, 720, 1080, 1440, 1980]}
+                        sizes={`(max-width: 240px) 240px, (max-width: 540px) 540px, (max-width: 720px) 720px, (max-width: 1080px) 1080px, (max-width: 1440px) 1440px, 1920px`}
+                    />
                 </div>
             </div>
 
