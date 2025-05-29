@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderSmall from "../components/HeaderSmall.astro";
+import GridPrograms from "../components/GridPrograms.astro";
+import Welcome from "../components/Welcome.astro";
+import GeneralFAQs from "../components/react/GeneralFAQ";
+import FlightTrainingSection from "../components/FlightTrainingSection.astro";
+import FlightSchoolFeatures from "../components/FlightSchoolFeatures.astro";
+import FlightTrainingAdvantages from "../components/FlightTrainingAdvantages.astro";
+import speedway from "../data/pages/speedway";
+import programs from "../data/programs";
+
+
+
+const welcome = {
+  title: "Why choose Speedway",
+  paragraphs: [
+    "At Speedway Flight Training, we’re proud to offer high-quality instruction with a well-maintained fleet in the Greater Atlanta area.",
+    "Speedway Flight Training offers a structured, hands-on approach to flight education with a focus on personalized instruction, safe operations, and modern training tools.",
+    "Whether you're learning to fly for fun or preparing for a career, our welcoming community, experienced instructors, and reliable aircraft create the perfect environment to grow as a pilot.",
+  ],
+  imagePath: "/src/assets/speedway-flight-training-cessna-172-hampton-ga.webp",
+  imageAlt: "Cessna 172 at Atlanta Speedway Airport in Hampton, GA, during sunset. Speedway Flight Training's well-maintained fleet provides professional pilot training near Atlanta, offering private, instrument, and commercial flight courses.",
+  buttons: []
+};
+
+const  header = {
+    stars: true,
+    imagePath: "/src/assets/atlanta-airport-Speedway-Flight-Training-141.webp",
+    imageAlt: "Speedway Flight Training student pilot celebrating her first solo flight",
+    headerH1: `Start Learning to Fly Today`,
+    paragraph: `At Speedway Flight Training, our mission is to deliver high-quality flight training in a supportive and professional environment. From your first flight to your commercial career, we’re here to guide your journey with integrity, safety, and passion.`,
+    buttons: [
+      {
+        name: "Learn More",
+        link: "#intro",
+        primary: false,
+      },
+    ],
+  };
+
+
+const { data } = speedway;
+---
+
+<BaseLayout
+  siteTitle={data.pageTitle}
+  siteDescription={data.pageDescription}
+  keywords={data.pageKeywords}
+>
+
+  <HeaderSmall content={header} />
+  
+  <Welcome content={welcome} />
+
+
+  <div id="intro"></div>
+  <FlightTrainingSection />
+  <FlightSchoolFeatures />
+  <div id="info"></div>
+  <FlightTrainingAdvantages />
+
+  <GridPrograms content={programs} />
+  <section class="py-14 bg-accent-100">
+    <div class="max-w-7xl mx-auto flex justify-center">
+      <!-- <GeneralFAQs client:visible /> -->
+    </div>
+  </section>
+  <!-- <CTAFinancing content={financingCompData} /> -->
+  <!-- <script src="../scripts/creativeSwiper.js"></script> -->
+</BaseLayout>
