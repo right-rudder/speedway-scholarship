@@ -27,6 +27,14 @@ export const navbarLinks = [
       name: "About",
       link: "/about",
       submenu: [
+        {
+          name: "Speedway Flight Training Scholarship Fund.",
+          link: "/about",
+        },
+        {
+          name: "Speedway Flight Training",
+          link: "/speedway",
+        },
       ],
     },
     {

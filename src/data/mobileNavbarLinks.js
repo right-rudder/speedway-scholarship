@@ -1,31 +1,45 @@
 export const mobileNavbarLinks = [
     {
-      name: "Page 1",
+      name: "Home",
       link: "/#",
       submenu: [
+      ],
+    },
+    {
+      name: "More",
+      link: "/#program",
+      submenu: [
         {
-          name: "Subpage 1",
-          link: "/#",
+          name: "Requirements",
+          link: "/#requirements",
         },
         {
-          name: "Subpage 2",
-          link: "/#",
+          name: "Details",
+          link: "/#details",
+        },
+        {
+          name: "Donate",
+          link: "/donate",
         },
       ],
     },
     {
       name: "About",
-      link: "/about-us",
+      link: "/about",
       submenu: [
         {
-          name: "Subpage 1",
-          link: "/about-us/#",
+          name: "Speedway Flight Training Scholarship Fund.",
+          link: "/about",
+        },
+        {
+          name: "Speedway Flight Training",
+          link: "/speedway",
         },
       ],
     },
     {
-      name: "Form 1",
-      link: "/#",
+      name: "Apply now",
+      link: "/apply",
       submenu: [],
     },
   ];

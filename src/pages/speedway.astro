@@ -9,8 +9,10 @@ import FlightSchoolFeatures from "../components/FlightSchoolFeatures.astro";
 import FlightTrainingAdvantages from "../components/FlightTrainingAdvantages.astro";
 import speedway from "../data/pages/speedway";
 import programs from "../data/programs";
-
-
+import UnderHeader from "../components/UnderHeader.astro";
+import {  
+    RAYYU_MALDIVES as imgUnderHeader,   
+} from "../constsImages";
 
 const welcome = {
   title: "Why choose Speedway",
@@ -38,7 +40,22 @@ const  header = {
       },
     ],
   };
-
+const underHeader = {
+      title: "Dream of flying?",
+      paragraphs: [
+        "We’ll fund your wings. The Speedway Flight Training Scholarship covers 100% of your FAA Private Pilot Certificate costs—so you can soar toward a professional aviation career.",
+      ],
+      image: {
+        imagePath: imgUnderHeader.imagePath,
+        imageAlt: imgUnderHeader.imageAlt,
+      },
+      buttons: [
+        {
+          text: "Support Future Aviators",
+          link: "/donate",
+        },
+      ],
+    };
 
 const { data } = speedway;
 ---
@@ -63,9 +80,11 @@ const { data } = speedway;
   <GridPrograms content={programs} />
   <section class="py-14 bg-accent-100">
     <div class="max-w-7xl mx-auto flex justify-center">
-      <!-- <GeneralFAQs client:visible /> -->
+      <GeneralFAQs client:visible />
     </div>
   </section>
+  
+  <UnderHeader content={underHeader} />
   <!-- <CTAFinancing content={financingCompData} /> -->
   <!-- <script src="../scripts/creativeSwiper.js"></script> -->
 </BaseLayout>
