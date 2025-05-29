@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderScreen from "../components/HeaderScreen.astro";
+import { COMPANY_NAME, KEYWORDS } from "../consts";
+import { JORGEN_HENDRICKSEN } from "../constsImages";
+const donateConfirmation = {
+  data: {
+    //SEO Header Stuff
+    pageTitle: `Donation Acknowledgement | ${COMPANY_NAME}`,
+    pageDescription:
+      `Thank you for supporting the next generation of aviators through your donation to ${COMPANY_NAME}. Your generosity helps students soar toward their aviation dreams.`,
+    pageKeywords:
+      `donation confirmation, donor acknowledgement letter,  support aviation, ${COMPANY_NAME} donation, aviation scholarships, support flight training, aviation education, donor appreciation, ${KEYWORDS}`,
+
+    header: {
+      imagePath: JORGEN_HENDRICKSEN.imagePath,
+      imageAlt: JORGEN_HENDRICKSEN.imageAlt,
+      headerH1: "THANK YOU FOR YOUR DONATION",
+      paragraph: `We sincerely appreciate your generous contribution to ${COMPANY_NAME}.<br>Your support plays a vital role in helping aspiring pilots take flight.<br>We’ll send you a donor acknowledgement letter email shortly. For any questions, feel free to contact us at info@speedwayscholarship.com.`,
+      buttons: [
+        {
+          name: "Home Page",
+          link: "/",
+          primary: true,
+        },
+      ],
+    },
+  }
+};
+
+const { data } = donateConfirmation;
+---
+
+<BaseLayout
+  siteTitle={data.pageTitle}
+  siteDescription={data.pageDescription}
+  keywords={data.pageKeywords}
+>
+  <HeaderScreen content={data.header} />
+</BaseLayout>
