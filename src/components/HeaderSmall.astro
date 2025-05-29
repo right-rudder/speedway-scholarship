@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const { content } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif,webp}"
+);
+if (!images[content.imagePath]) {
+  throw new Error(
+    `"${content.imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,webp}"`
+  );
+}
+---
+
+<section
+  class="relative h-[100vh] lg:h-[86vh] min-h-fit font-sans bg-gray-800 text-white flex flex-col items-center justify-center overflow-hidden pt-12 pb-6"
+>
+  <Image
+    src={images[content.imagePath]()}
+    alt={content.imageAlt}
+    loading={"eager"}
+    class="absolute inset-0 -z-0 object-cover object-center w-full h-full animate-slow-zoom"
+    widths={[240, 540, 720, 1080, 1440, 1980]}
+    sizes={`(max-width: 240px) 240px, (max-width: 540px) 540px, (max-width: 720px) 720px, (max-width: 1080px) 1080px, (max-width: 1440px) 1440px, 1920px`}
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-mariner-900/40 to-mariner-900/40 w-full h-full z-0"
+  >
+  </div>
+  <!-- Text -->
+  <div
+    class="text-white mt-20 lg:mt-0 text-center lg:text-left z-10 flex flex-col items-center px-5 h-full lg:pt-28 justify-center animate-fade-top"
+  >
+    <h1
+      class="text-5xl md:text-6xl uppercase lg:text-8xl font-sans2 -skew-x-12 drop-shadow-lg xl:text-8xl text-center font-bold text-accent-100 animate-fade-top"
+      set:html={content.headerH1}
+    />
+    <h2
+      class="text-xl mt-0 font-medium font-sans tracking-wide text-accent-50 text-center max-w-5xl animate-fade-bottom"
+      set:html={content.paragraph}
+    />
+    <div
+      class="mt-6 flex flex-wrap justify-center align-middle items-center gap-3 z-10 mb-2 py-10"
+    >
+      {
+        content.buttons &&
+          content.buttons.map((btn) => (
+            <a
+              href={btn.link}
+              class={`${btn.primary ? "btn-primary" : "btn-accent"} w-full md:w-auto `}
+            >
+              <span class="drop-shadow-sm">{btn.name}</span>
+            </a>
+          ))
+      }
+    </div>
+    <div class="h-2 p-2"></div>
+  </div>
+</sect>
