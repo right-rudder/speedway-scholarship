@@ -7,7 +7,7 @@ export const navbarLinks = [
     },
     {
       name: "More",
-      link: "/",
+      link: "/#program",
       submenu: [
         {
           name: "Requirements",
@@ -25,7 +25,7 @@ export const navbarLinks = [
     },
     {
       name: "About",
-      link: "#",
+      link: "/about",
       submenu: [
         {
           name: "Speedway Flight Training Scholarship Fund.",

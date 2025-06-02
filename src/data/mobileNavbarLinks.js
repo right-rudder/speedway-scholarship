@@ -1,14 +1,18 @@
 export const mobileNavbarLinks = [
     {
       name: "Home",
-      link: "/#",
+      link: "/",
       submenu: [
       ],
     },
     {
       name: "More",
-      link: "/#program",
+      link: "#",
       submenu: [
+        {
+          name: "More",
+          link: "/#program",
+        },
         {
           name: "Requirements",
           link: "/#requirements",
@@ -25,7 +29,7 @@ export const mobileNavbarLinks = [
     },
     {
       name: "About",
-      link: "/about",
+      link: "#",
       submenu: [
         {
           name: "Speedway Flight Training Scholarship Fund.",
