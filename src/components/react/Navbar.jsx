@@ -159,7 +159,7 @@ const Navbar = ({ pathname }) => {
                       )}
                       {item.submenu && item.submenu.length > 0 && (
                         <ul
-                          className={`absolute top-14 bg-mariner-900/90 border-b-4 border-mariner-900/20 whitespace-nowrap text-primary-50 -left-4 duration-200 ease-out ${hoveredIndex === index ? "max-h-auto w-auto opacity-100" : "max-h-0 h-0 opacity-0 overflow-hidden"}`}
+                          className={`absolute top-14 bg-mariner-900/90 border-b-4 border-mariner-900/20 whitespace-nowrap text-muted-50 -left-4 duration-200 ease-out ${hoveredIndex === index ? "max-h-auto w-auto opacity-100" : "max-h-0 h-0 opacity-0 overflow-hidden"}`}
                         >
                           {item.submenu.map((subitem, subIndex) => (
                             <li
@@ -267,7 +267,7 @@ const Navbar = ({ pathname }) => {
       <div
         className={`${
           openMobile ? "max-h-screen opacity-100" : "max-h-0 opacity-60"
-        } overflow-x-hidden duration-500 delay-200 ease-in-out h-screen lg:hidden absolute w-full bg-gradient-to-b from-black via-primary-950 to-accent-950 z-20 top-0`}
+        } overflow-x-hidden duration-500 delay-200 ease-in-out h-screen lg:hidden absolute w-full bg-gradient-to-b from-black via-mariner-900 to-accent-950 z-20 top-0`}
         id="mobile-menu"
       >
         <div className="flex justify-end pl-5 pr-[26px] py-6">
@@ -321,7 +321,7 @@ const Navbar = ({ pathname }) => {
                 <a
                   href={item.link}
                   target={`${item.link.includes("http") ? "_blank" : "_self"}`}
-                  className="font-bold p-5 block text-xl duration-300 text-primary-100 border-accent-900 whitespace-nowrap group-last:bg-mariner-900 group-last:font-medium group-last:border-2 group-last:mt-12 group-last:py-4 group-last:px-8 group-last:rounded-full group-last:text-center group-last:mx-5"
+                  className="font-bold p-5 block text-xl duration-300 text-muted-100 border-accent-900 whitespace-nowrap group-last:bg-mariner-900 group-last:font-medium group-last:border-2 group-last:mt-12 group-last:py-4 group-last:px-8 group-last:rounded-full group-last:text-center group-last:mx-5"
                 >
                   {item.name}
                 </a>
@@ -340,7 +340,7 @@ const Navbar = ({ pathname }) => {
               )}
               {item.submenu && item.submenu.length > 0 && (
                 <ul
-                  className={`mx-auto bg-primary-700/40 whitespace-nowrap left-0 duration-500 overflow-hidden ${hoveredIndex === index ? "max-h-[50rem]" : "max-h-0"}`}
+                  className={`mx-auto bg-mariner-800/40 whitespace-nowrap left-0 duration-500 overflow-hidden ${hoveredIndex === index ? "max-h-[50rem]" : "max-h-0"}`}
                 >
                   {item.submenu.map((subitem, subIndex) => (
                     <li
@@ -350,7 +350,7 @@ const Navbar = ({ pathname }) => {
                     >
                       {subitem.link ? (
                         <a
-                          className="p-5 block font-normal text-primary-200"
+                          className="p-5 block font-normal text-muted-200"
                           href={subitem.link}
                           target={`${subitem.link.includes("http") ? "_blank" : "_self"}`}
                         >

@@ -53,7 +53,7 @@ const GeneralFAQs = () => {
     {
       question: "Does Speedway offer financing options?",
       answer:
-        "We are partnered with <a href='https://stratus.finance' target='_blank' class='hover:brightness-125 text-primary-600'>Stratus Financial</a> to provide financing options for students.",
+        "We are partnered with <a href='https://stratus.finance' target='_blank' rel='noopener noreferrer' class='hover:brightness-125 text-primary-600'>Stratus Financial</a> to provide financing options for students.",
     },
     {
       question: "Does Speedway offer job placement assistance?",

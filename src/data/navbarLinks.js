@@ -1,7 +1,7 @@
 export const navbarLinks = [
     {
       name: "Home",
-      link: "/#",
+      link: "/",
       submenu: [
       ],
     },
