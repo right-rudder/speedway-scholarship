@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderScreen from "../components/HeaderScreen.astro";
+import { COMPANY_NAME, KEYWORDS } from "../consts";
+import { JORGEN_HENDRICKSEN } from "../constsImages";
+
+const scholarshipConfirmation = {
+  data: {
+    // SEO Header Stuff
+    pageTitle: `Application Confirmation | ${COMPANY_NAME}`,
+    pageDescription:
+      `Thank you for applying to the ${COMPANY_NAME} Scholarship Program. We’ve received your application and will follow up with next steps soon.`,
+    pageKeywords:
+      `scholarship application, application confirmation, ${COMPANY_NAME} scholarship, flight training scholarship, aviation education, student pilot scholarship, apply for flight training, ${KEYWORDS}`,
+
+    header: {
+      imagePath: JORGEN_HENDRICKSEN.imagePath,
+      imageAlt: JORGEN_HENDRICKSEN.imageAlt,
+      headerH1: "APPLICATION RECEIVED",
+      paragraph: `Thank you for applying to the ${COMPANY_NAME} Scholarship Program.<br>We’ve successfully received your application and our team will begin the review process shortly.<br>Please allow 1–2 business days for any follow-up communication. If you have questions, contact us at info@speedwayscholarship.com.`,
+      buttons: [
+        {
+          name: "Home Page",
+          link: "/",
+          primary: true,
+        },
+      ],
+    },
+  }
+};
+
+
+const { data } = scholarshipConfirmation;
+---
+
+<BaseLayout
+  siteTitle={data.pageTitle}
+  siteDescription={data.pageDescription}
+  keywords={data.pageKeywords}
+>
+  <HeaderScreen content={data.header} />
+</BaseLayout>
