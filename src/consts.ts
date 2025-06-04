@@ -10,7 +10,7 @@ export const SITE_DESCRIPTION = "";
 // CHANGE default keywords -> should only be used in homepage technically, but is there for a fallback in case a page is missed
 export const KEYWORDS = "";
 
-export const OG_IMAGE = "/speedway_scholarship_logo_no_background.png";
+export const OG_IMAGE = "/Speedway-Scholarship-Fund-OG-image.png";
 
 export const GEO_LATITUDE = 12.12345678901234;
 export const GEO_LONGITUDE = -12.12345678901234;
