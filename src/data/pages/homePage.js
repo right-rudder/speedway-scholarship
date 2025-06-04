@@ -6,6 +6,9 @@ import {
 } from "../../constsImages";
 
 const homePage = {
+  pageTitle: "Speedway Flight Training Scholarship Fund",
+  pageDescription: "The Speedway Flight Training Scholarship Fund offers fully funded flight training for high school students passionate about aviation, covering all costs towards an FAA Private Pilot Certificate.",
+  pageKeywords: "flight training scholarship, aviation scholarship, pilot training, flight school, fully funded scholarship, high school students, FAA Private Pilot Certificate, Atlanta Speedway Airport, Speedway Flight Training",
   data: {
     header: {
       stars: true,
