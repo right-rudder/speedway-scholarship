@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeaderScreen from "../components/HeaderScreen.astro";
 import UnderHeader from "../components/UnderHeader.astro";
+import CourseSchema from "../components/seo/CourseSchema.astro";
 
 import homePage from "../data/pages/homePage";
 import { speedwayScholarship } from "../data/scholarshipData";
@@ -20,14 +21,16 @@ const { data } = homePage;
   siteDescription={data.pageDescription}
   keywords={data.pageKeywords}
 >
+  <!-- COURSE SCHEMA FOR PRIVATE PILOT SCHOLARSHIP -->
+  <CourseSchema courseType="Private Pilot" pageContext="homepage" />
+
   <!-- HEADER -->
   <HeaderScreen content={data.header} />
   <UnderHeader content={data.underHeader} />
   <!-- CONTENT -->
   <ProgramStructure content={data.missionStatementSection} />
-  <Requirements content={speedwayScholarship.eligibility} id="requirements"/>
-  <ProgramDetails content={speedwayScholarship.awardDetails} id="details"/>
+  <Requirements content={speedwayScholarship.eligibility} id="requirements" />
+  <ProgramDetails content={speedwayScholarship.awardDetails} id="details" />
   <FAQ content={data.frequentQuestions} />
   <!-- CTA -->
-
 </BaseLayout>

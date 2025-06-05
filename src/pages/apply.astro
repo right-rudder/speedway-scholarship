@@ -3,6 +3,7 @@ import ApplyComponent from "../components/ApplyComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 // import Location from "../components/Location.astro";
 import HeaderScreen from "../components/HeaderScreen.astro";
+import BreadcrumbNav from "../components/seo/BreadcrumbNav.astro";
 import { WESTWIND_AIR_SERVICE as imgHeader } from "../constsImages";
 
 const header = {
@@ -22,15 +23,18 @@ const header = {
 ---
 
 <BaseLayout
-  siteTitle="Apply | Speedway Scholarship Fund."
-  siteDescription=""
-  keywords="flight school application, Enroll flight training, Speedway Flight Training enrollment, pilot license application, flight school Hampton GA"
+  siteTitle="Apply for Flight Training Scholarship | Speedway Scholarship Fund"
+  siteDescription="Apply for the Speedway Flight Training Scholarship - fully funded flight training for high school students. Complete your application today and take the first step toward your aviation career."
+  keywords="apply flight scholarship, aviation scholarship application, high school pilot scholarship, free flight training application, speedway scholarship fund apply, Hampton GA aviation scholarship"
 >
+  <!-- BREADCRUMB NAVIGATION -->
+  <BreadcrumbNav />
+
   <HeaderScreen content={header} />
   <iframe
     src="https://msg.flightschoolcrm.com/widget/form/j9DbQBQJ90rZac4pheu6"
     style="width:100%;height:100%;border:none;border-radius:3px"
-    id="inline-j9DbQBQJ90rZac4pheu6" 
+    id="inline-j9DbQBQJ90rZac4pheu6"
     data-layout="{'id':'INLINE'}"
     data-trigger-type="alwaysShow"
     data-trigger-value=""
@@ -43,7 +47,7 @@ const header = {
     data-layout-iframe-id="inline-j9DbQBQJ90rZac4pheu6"
     data-form-id="j9DbQBQJ90rZac4pheu6"
     title="Application Form"
-        >
+  >
   </iframe>
   <script src="https://msg.flightschoolcrm.com/js/form_embed.js"></script>
   <!-- <ApplyComponent /> -->

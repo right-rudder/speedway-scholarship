@@ -7,12 +7,11 @@ import GeneralFAQs from "../components/react/GeneralFAQ";
 import FlightTrainingSection from "../components/FlightTrainingSection.astro";
 import FlightSchoolFeatures from "../components/FlightSchoolFeatures.astro";
 import FlightTrainingAdvantages from "../components/FlightTrainingAdvantages.astro";
+import BreadcrumbNav from "../components/seo/BreadcrumbNav.astro";
 import speedway from "../data/pages/speedway";
 import programs from "../data/programs";
 import UnderHeader from "../components/UnderHeader.astro";
-import {  
-    RAYYU_MALDIVES as imgUnderHeader,   
-} from "../constsImages";
+import { RAYYU_MALDIVES as imgUnderHeader } from "../constsImages";
 
 const welcome = {
   title: "Why choose Speedway",
@@ -22,40 +21,42 @@ const welcome = {
     "Whether you're learning to fly for fun or preparing for a career, our welcoming community, experienced instructors, and reliable aircraft create the perfect environment to grow as a pilot.",
   ],
   imagePath: "/src/assets/speedway-flight-training-cessna-172-hampton-ga.webp",
-  imageAlt: "Cessna 172 at Atlanta Speedway Airport in Hampton, GA, during sunset. Speedway Flight Training's well-maintained fleet provides professional pilot training near Atlanta, offering private, instrument, and commercial flight courses.",
-  buttons: []
+  imageAlt:
+    "Cessna 172 at Atlanta Speedway Airport in Hampton, GA, during sunset. Speedway Flight Training's well-maintained fleet provides professional pilot training near Atlanta, offering private, instrument, and commercial flight courses.",
+  buttons: [],
 };
 
-const  header = {
-    stars: true,
-    imagePath: "/src/assets/atlanta-airport-Speedway-Flight-Training-141.webp",
-    imageAlt: "Speedway Flight Training student pilot celebrating her first solo flight",
-    headerH1: `Start Learning to Fly Today`,
-    paragraph: `At Speedway Flight Training, our mission is to deliver high-quality flight training in a supportive and professional environment. From your first flight to your commercial career, we’re here to guide your journey with integrity, safety, and passion.`,
-    buttons: [
-      {
-        name: "Learn More",
-        link: "#intro",
-        primary: false,
-      },
-    ],
-  };
+const header = {
+  stars: true,
+  imagePath: "/src/assets/atlanta-airport-Speedway-Flight-Training-141.webp",
+  imageAlt:
+    "Speedway Flight Training student pilot celebrating her first solo flight",
+  headerH1: `Start Learning to Fly Today`,
+  paragraph: `At Speedway Flight Training, our mission is to deliver high-quality flight training in a supportive and professional environment. From your first flight to your commercial career, we’re here to guide your journey with integrity, safety, and passion.`,
+  buttons: [
+    {
+      name: "Learn More",
+      link: "#intro",
+      primary: false,
+    },
+  ],
+};
 const underHeader = {
-      title: "Dream of flying?",
-      paragraphs: [
-        "We’ll fund your wings. The Speedway Flight Training Scholarship covers 100% of your FAA Private Pilot Certificate costs—so you can soar toward a professional aviation career.",
-      ],
-      image: {
-        imagePath: imgUnderHeader.imagePath,
-        imageAlt: imgUnderHeader.imageAlt,
-      },
-      buttons: [
-        {
-          text: "Support Future Aviators",
-          link: "/donate",
-        },
-      ],
-    };
+  title: "Dream of flying?",
+  paragraphs: [
+    "We’ll fund your wings. The Speedway Flight Training Scholarship covers 100% of your FAA Private Pilot Certificate costs—so you can soar toward a professional aviation career.",
+  ],
+  image: {
+    imagePath: imgUnderHeader.imagePath,
+    imageAlt: imgUnderHeader.imageAlt,
+  },
+  buttons: [
+    {
+      text: "Support Future Aviators",
+      link: "/donate",
+    },
+  ],
+};
 
 const { data } = speedway;
 ---
@@ -65,11 +66,10 @@ const { data } = speedway;
   siteDescription={data.pageDescription}
   keywords={data.pageKeywords}
 >
-
   <HeaderSmall content={header} />
-  
-  <Welcome content={welcome} />
+  <BreadcrumbNav />
 
+  <Welcome content={welcome} />
 
   <div id="intro"></div>
   <FlightTrainingSection />
@@ -83,7 +83,7 @@ const { data } = speedway;
       <GeneralFAQs client:visible />
     </div>
   </section>
-  
+
   <UnderHeader content={underHeader} />
   <!-- <CTAFinancing content={financingCompData} /> -->
   <!-- <script src="../scripts/creativeSwiper.js"></script> -->

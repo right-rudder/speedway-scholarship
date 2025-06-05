@@ -1,144 +1,19 @@
 ---
-import "/src/styles/global.css";
-import BreadcrumbSchema from "./BreadcrumbSchema.astro";
-
-interface Props {
-  title: string;
-  description: string;
-  keywords: string;
-  image?: string;
-}
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const { title, description, keywords, image = "" } = Astro.props;
+import {
+  COMPANY_NAME,
+  PHONE_NUMBER,
+  EMAIL_ADDRESS,
+  ADDRESS_LINE_1,
+  ADDRESS_CITY,
+  ADDRESS_STATE,
+  ADDRESS_ZIP,
+  GMAPS,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  AIRPORT,
+} from "../../consts";
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<!-- Site Created By:    
-       _____  _       _     _     _____           _     _           
-      |  __ \(_)     | |   | |   |  __ \         | |   | |          
-      | |__) |_  __ _| |__ | |_  | |__) |   _  __| | __| | ___ _ __ 
-      |  _  /| |/ _` | '_ \| __| |  _  / | | |/ _` |/ _` |/ _ \ '__|
-      | | \ \| | (_| | | | | |_  | | \ \ |_| | (_| | (_| |  __/ |   
-      |_|  \_\_|\__, |_| |_|\__| |_|  \_\__,_|\__,_|\__,_|\___|_|   
-      |  \/  |   __/ |  | |      | | (_)                            
-      | \  / | _|___/ __| | _____| |_ _ _ __   __ _                 
-      | |\/| |/ _` | '__| |/ / _ \ __| | '_ \ / _` |                
-      | |  | | (_| | |  |   <  __/ |_| | | | | (_| |                
-      |_|  |_|\__,_|_|  |_|\_\___|\__|_|_| |_|\__, |                
-                                               __/ |                
-                                              |___/                 
-
-    Nice to see you here.  Find new student pilots with Right Rudder Marketing.  https://rightruddermarketing.com/contact-us -->
-
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<!-- Preload critical resources -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="dns-prefetch" href="https://msg.flightschoolcrm.com" />
-
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link
-  rel="icon"
-  type="image/png"
-  sizes="192x192"
-  href="/android-chrome-192x192.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="512x512"
-  href="/android-chrome-512x512.png"
-/>
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-<!-- Manifest -->
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="generator" content={Astro.generator} />
-
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Hreflang for language/region targeting -->
-<link rel="alternate" hreflang="en-US" href={canonicalURL} />
-<link rel="alternate" hreflang="en" href={canonicalURL} />
-
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
-<meta name="author" content="Speedway Flight Training Scholarship Fund" />
-<meta name="robots" content="index, follow" />
-<meta name="language" content="English" />
-<meta name="revisit-after" content="7 days" />
-<meta name="distribution" content="web" />
-
-<!-- Additional SEO Meta Tags -->
-<meta name="theme-color" content="#1e3a8a" />
-<meta name="msapplication-TileColor" content="#1e3a8a" />
-<meta name="application-name" content="Speedway Scholarship Fund" />
-
-<!-- Geographic Meta Tags -->
-<meta name="geo.region" content="US-GA" />
-<meta name="geo.placename" content="Hampton, Georgia" />
-<meta name="geo.position" content="33.3881;-84.3207" />
-<meta name="ICBM" content="33.3881, -84.3207" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<link rel="sitemap" href="/sitemap-index.xml" />
-
-<!-- UPDATE GTAG PLEASE -->
-<!-- Google tag (gtag.js) -->
-<script
-  type="text/partytown"
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-XRC6PG4W6L"></script>
-<script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-XRC6PG4W6L");
-</script>
-
-<!-- Google tag (gtag.js) -->
-<!-- <script 
-    type="javascript"
-    async 
-    src="https://www.googletagmanager.com/gtag/js?id=G-XRC6PG4W6L"></script> 
-  <script type="javascript"> 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){
-      dataLayer.push(arguments);
-    } 
-    gtag('js', new Date()); 
-    gtag('config', 'G-XRC6PG4W6L'); 
-  </script> -->
-
-<!-- End Google tag -->
-
-<!-- Local Business Schema -->
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -337,6 +212,3 @@ const { title, description, keywords, image = "" } = Astro.props;
     ]
   }
 </script>
-
-<!-- Breadcrumb Schema -->
-<BreadcrumbSchema />

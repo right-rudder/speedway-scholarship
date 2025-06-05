@@ -1,0 +1,76 @@
+---
+// Video Schema for Educational Content
+// Helps search engines understand and display video content in rich results
+export interface VideoSchemaProps {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration: string; // ISO 8601 duration format (e.g., "PT10M30S")
+  videoUrl?: string; // Optional - only if video is embedded
+  embedUrl?: string; // Optional - for embedded videos
+}
+
+const { 
+  name, 
+  description, 
+  thumbnailUrl, 
+  uploadDate, 
+  duration,
+  videoUrl,
+  embedUrl 
+} = Astro.props as VideoSchemaProps;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": name,
+  "description": description,
+  "thumbnailUrl": thumbnailUrl,
+  "uploadDate": uploadDate,
+  "duration": duration,
+  "contentUrl": videoUrl,
+  "embedUrl": embedUrl,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Speedway Flight Training",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://speedwayscholarship.org/speedway-flight-training-hampton-georgia-logo-red.png",
+      "width": 200,
+      "height": 60
+    }
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Speedway Flight Training",
+    "url": "https://speedwayscholarship.org"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Flight Training",
+      "description": "Professional aviation instruction and certification"
+    },
+    {
+      "@type": "Thing",
+      "name": "Pilot Education",
+      "description": "Educational content for aspiring pilots"
+    }
+  ],
+  "educationalLevel": "Beginner to Advanced",
+  "learningResourceType": "Video",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "audience": {
+    "@type": "EducationalAudience", 
+    "educationalRole": "student",
+    "audienceType": "Aspiring pilots, aviation students, scholarship recipients"
+  },
+  "keywords": "flight training, pilot education, aviation instruction, pre-flight checklist, aircraft systems",
+  "genre": "Educational",
+  "isFamilyFriendly": true
+})}>
+</script>

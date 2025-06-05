@@ -1,0 +1,258 @@
+---
+// SEO Monitoring and Analytics Component
+// Provides comprehensive tracking for SEO performance and user behavior
+
+export interface SEOMonitoringProps {
+  googleAnalyticsId?: string;
+  clarityProjectId?: string;
+  enableEnhancedEcommerce?: boolean;
+  enableWebVitals?: boolean;
+  enableErrorTracking?: boolean;
+}
+
+const {
+  googleAnalyticsId = "G-MEASUREMENT_ID", // Replace with actual ID in production
+  clarityProjectId = "CLARITY_ID", // Replace with actual ID in production
+  enableEnhancedEcommerce = true,
+  enableWebVitals = true,
+  enableErrorTracking = true,
+} = Astro.props as SEOMonitoringProps;
+---
+
+<!-- Google Analytics 4 -->
+<script
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+></script>
+<script
+  define:vars={{ googleAnalyticsId, enableEnhancedEcommerce, enableWebVitals }}
+>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", googleAnalyticsId, {
+    // Enhanced ecommerce for tracking scholarship applications
+    enhanced_ecommerce: enableEnhancedEcommerce,
+    // Core Web Vitals tracking
+    custom_map: {
+      custom_parameter_1: "page_load_time",
+      custom_parameter_2: "cumulative_layout_shift",
+    },
+  });
+
+  // Track Core Web Vitals
+  function trackWebVitals() {
+    // Largest Contentful Paint (LCP)
+    if (typeof PerformanceObserver !== "undefined") {
+      // LCP
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        if (entries.length > 0) {
+          const lastEntry = entries[entries.length - 1];
+          if (typeof gtag !== "undefined") {
+            gtag("event", "web_vitals", {
+              event_category: "Performance",
+              event_label: "LCP",
+              value: Math.round(lastEntry.startTime),
+            });
+          }
+        }
+      }).observe({ entryTypes: ["largest-contentful-paint"] });
+
+      // FID
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        if (entries.length > 0) {
+          const firstInput = entries[0];
+          if (
+            typeof gtag !== "undefined" &&
+            "processingStart" in firstInput &&
+            "startTime" in firstInput
+          ) {
+            gtag("event", "web_vitals", {
+              event_category: "Performance",
+              event_label: "FID",
+              value: Math.round(
+                firstInput.processingStart - firstInput.startTime
+              ),
+            });
+          }
+        }
+      }).observe({ entryTypes: ["first-input"] });
+
+      // CLS
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if ("hadRecentInput" in entry && !entry.hadRecentInput) {
+            clsValue += entry.value || 0;
+          }
+        }
+        if (typeof gtag !== "undefined") {
+          gtag("event", "web_vitals", {
+            event_category: "Performance",
+            event_label: "CLS",
+            value: Math.round(clsValue * 1000),
+          });
+        }
+      }).observe({ entryTypes: ["layout-shift"] });
+    }
+  }
+
+  // Initialize Web Vitals tracking when page loads
+  if (document.readyState === "complete") {
+    trackWebVitals();
+  } else {
+    window.addEventListener("load", trackWebVitals);
+  }
+
+  // Track scholarship application events
+  function trackScholarshipEvent(action, details = {}) {
+    if (typeof gtag !== "undefined") {
+      gtag("event", action, {
+        event_category: "Scholarship",
+        event_label: "Application Process",
+        ...details,
+      });
+    }
+  }
+
+  // Track contact form submissions
+  function trackContactEvent(action, method = "form") {
+    if (typeof gtag !== "undefined") {
+      gtag("event", action, {
+        event_category: "Contact",
+        event_label: method,
+        value: 1,
+      });
+    }
+  }
+
+  // Make tracking functions globally available
+  if (typeof window !== "undefined") {
+    window.trackScholarshipEvent = trackScholarshipEvent;
+    window.trackContactEvent = trackContactEvent;
+  }
+</script>
+
+<!-- Microsoft Clarity for user behavior insights -->
+<script type="text/javascript" define:vars={{ clarityProjectId }}>
+  (function (c, l, a, r, i, t, y) {
+    c[a] =
+      c[a] ||
+      function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", clarityProjectId);
+</script>
+
+<!-- Schema.org structured data for monitoring -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Speedway Flight Training Scholarship",
+    "url": "https://speedwayscholarship.org",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://speedwayscholarship.org/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Speedway Flight Training",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://speedwayscholarship.org/speedway-flight-training-hampton-georgia-logo-red.png"
+      }
+    },
+    "mainEntity": {
+      "@type": "EducationalOrganization",
+      "name": "Speedway Flight Training Scholarship Fund",
+      "description": "Providing fully funded flight training scholarships for aspiring pilots in Hampton, Georgia"
+    }
+  }
+</script>
+
+<!-- JSON-LD for site navigation monitoring -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": ["Home", "About", "Apply", "Flight Training", "Contact", "Donate"],
+    "url": [
+      "https://speedwayscholarship.org/",
+      "https://speedwayscholarship.org/about",
+      "https://speedwayscholarship.org/apply",
+      "https://speedwayscholarship.org/speedway",
+      "https://speedwayscholarship.org/contact-us",
+      "https://speedwayscholarship.org/donate"
+    ]
+  }
+</script>
+
+<!-- Performance monitoring and error tracking -->
+<script is:inline>
+  // Monitor page load performance
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      if (performance && performance.getEntriesByType) {
+        const navEntries = performance.getEntriesByType("navigation");
+        if (navEntries && navEntries.length > 0) {
+          const perfData = navEntries[0];
+          // Check if properties exist (TypeScript safety)
+          if ("loadEventEnd" in perfData && "loadEventStart" in perfData) {
+            const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+
+            // Track page load time
+            if (typeof gtag !== "undefined") {
+              gtag("event", "page_load_time", {
+                event_category: "Performance",
+                value: Math.round(loadTime),
+              });
+            }
+          }
+        }
+      }
+    }, 0);
+  });
+
+  // Error tracking
+  window.addEventListener("error", function (e) {
+    if (typeof gtag !== "undefined") {
+      gtag("event", "javascript_error", {
+        event_category: "Error",
+        event_label: e.message,
+        value: 1,
+      });
+    }
+  });
+
+  // Track outbound links
+  document.addEventListener("click", function (e) {
+    const target = e.target;
+    // Type check for Element before using closest
+    if (target instanceof Element) {
+      const link = target.closest("a");
+      if (link && link.hostname !== window.location.hostname) {
+        if (typeof gtag !== "undefined") {
+          gtag("event", "click", {
+            event_category: "Outbound Link",
+            event_label: link.href,
+            transport_type: "beacon",
+          });
+        }
+      }
+    }
+  });
+</script>

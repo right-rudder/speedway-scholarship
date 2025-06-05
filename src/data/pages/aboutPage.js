@@ -1,17 +1,24 @@
 import { COMPANY_NAME, COMPANY_NICKNAME } from "../../consts";
-import {  
-    PLACEHOLDER as contentCTAimg, 
-    RAYYU_MALDIVES as imgUnderHeader,
-    JORGEN_HENDRICKSEN as imgHeader,    
+import {
+  PLACEHOLDER as contentCTAimg,
+  RAYYU_MALDIVES as imgUnderHeader,
+  JORGEN_HENDRICKSEN as imgHeader,
 } from "../../constsImages";
 
 const aboutPage = {
+  pageTitle:
+    "About Us - Speedway Flight Training Scholarship Fund | Aviation Scholarship Program",
+  pageDescription:
+    "Learn about the Speedway Flight Training Scholarship Fund's mission to provide fully funded flight training for high school students in Hampton, Georgia. Supporting future aviators through comprehensive scholarship programs.",
+  pageKeywords:
+    "about speedway scholarship, aviation scholarship fund, flight training foundation, high school pilot scholarship, Hampton Georgia aviation, scholarship mission, future aviators",
   data: {
     header: {
       stars: true,
       imagePath: imgHeader.imagePath,
       imageAlt: imgHeader.imageAlt,
-      headerH1: "Training Future Aviators: <br> Funded, Focused, and Responsible",
+      headerH1:
+        "Training Future Aviators: <br> Funded, Focused, and Responsible",
       paragraph:
         "Get 15 Hours of Free Flight Training—Earn the Rest with Dedication! <br/>The Speedway Flight Training Scholarship helps high school students take off toward a professional aviation career—at no cost to their families.",
       buttons: [

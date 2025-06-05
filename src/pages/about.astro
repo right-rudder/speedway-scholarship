@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeaderScreen from "../components/HeaderScreen.astro";
 import UnderHeader from "../components/UnderHeader.astro";
+import BreadcrumbNav from "../components/seo/BreadcrumbNav.astro";
 
 import aboutPage from "../data/pages/aboutPage";
 import { speedwayScholarship } from "../data/scholarshipData";
@@ -16,11 +17,13 @@ const { data } = aboutPage;
   siteDescription={data.pageDescription}
   keywords={data.pageKeywords}
 >
+  <!-- BREADCRUMB NAVIGATION -->
+  <BreadcrumbNav />
+
   <!-- HEADER -->
   <HeaderScreen content={data.header} />
   <!-- <UnderHeader content={data.underHeader} /> -->
   <!-- CONTENT -->
   <Mission content={speedwayScholarship.about} />
   <!-- CTA -->
-
 </BaseLayout>

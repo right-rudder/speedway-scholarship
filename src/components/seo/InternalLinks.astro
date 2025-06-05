@@ -1,0 +1,173 @@
+---
+// Enhanced Internal Linking Component for SEO
+// This component provides contextual internal links to improve site navigation and SEO
+
+interface Props {
+  currentPage?: string;
+  includeScholarshipLinks?: boolean;
+  includeTrainingLinks?: boolean;
+  includeContactLinks?: boolean;
+  className?: string;
+}
+
+const {
+  currentPage = "",
+  includeScholarshipLinks = true,
+  includeTrainingLinks = true,
+  includeContactLinks = true,
+  className = "text-primary-600 hover:text-primary-800 underline",
+} = Astro.props;
+
+// Define internal link structure for SEO optimization
+const scholarshipLinks = [
+  {
+    text: "scholarship program",
+    url: "/#program",
+    context: "flight training scholarship program",
+  },
+  {
+    text: "eligibility requirements",
+    url: "/#requirements",
+    context: "scholarship eligibility requirements",
+  },
+  {
+    text: "application process",
+    url: "/apply",
+    context: "scholarship application process",
+  },
+  {
+    text: "program details",
+    url: "/#details",
+    context: "scholarship program details",
+  },
+];
+
+const trainingLinks = [
+  {
+    text: "Speedway Flight Training",
+    url: "/speedway",
+    context: "professional flight training services",
+  },
+  {
+    text: "Private Pilot Certificate training",
+    url: "/speedway#private-pilot",
+    context: "Private Pilot License training",
+  },
+  {
+    text: "Atlanta Speedway Airport",
+    url: "/speedway#location",
+    context: "training location at Atlanta Speedway Airport",
+  },
+];
+
+const contactLinks = [
+  {
+    text: "contact us",
+    url: "/contact-us",
+    context: "contact information and inquiries",
+  },
+  {
+    text: "donate to the fund",
+    url: "/donate",
+    context: "support future aviators through donations",
+  },
+  {
+    text: "about our mission",
+    url: "/about",
+    context: "learn about our mission and impact",
+  },
+];
+---
+
+<div class="internal-links-seo" data-component="internal-links">
+  {
+    includeScholarshipLinks && (
+      <div class="scholarship-links mb-4">
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-gray-600 mb-2">
+          Scholarship Information
+        </h4>
+        <ul class="space-y-1">
+          {scholarshipLinks.map(
+            (link) =>
+              currentPage !== link.url && (
+                <li>
+                  <a
+                    href={link.url}
+                    class={className}
+                    title={link.context}
+                    aria-label={link.context}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              )
+          )}
+        </ul>
+      </div>
+    )
+  }
+
+  {
+    includeTrainingLinks && (
+      <div class="training-links mb-4">
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-gray-600 mb-2">
+          Flight Training
+        </h4>
+        <ul class="space-y-1">
+          {trainingLinks.map(
+            (link) =>
+              currentPage !== link.url && (
+                <li>
+                  <a
+                    href={link.url}
+                    class={className}
+                    title={link.context}
+                    aria-label={link.context}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              )
+          )}
+        </ul>
+      </div>
+    )
+  }
+
+  {
+    includeContactLinks && (
+      <div class="contact-links mb-4">
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-gray-600 mb-2">
+          Get Involved
+        </h4>
+        <ul class="space-y-1">
+          {contactLinks.map(
+            (link) =>
+              currentPage !== link.url && (
+                <li>
+                  <a
+                    href={link.url}
+                    class={className}
+                    title={link.context}
+                    aria-label={link.context}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              )
+          )}
+        </ul>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .internal-links-seo a {
+    @apply transition-colors duration-200;
+  }
+
+  .internal-links-seo a:hover {
+    @apply brightness-110;
+  }
+</style>

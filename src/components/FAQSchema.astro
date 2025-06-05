@@ -1,0 +1,34 @@
+---
+const { content } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  name: "Speedway Flight Training Scholarship Fund FAQ",
+  description:
+    "Frequently asked questions about the Speedway Flight Training Scholarship Fund program, eligibility, and application process.",
+  url: "https://speedwayscholarship.com/",
+  mainEntity: content.questions.map((item: any) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+      dateCreated: "2024-01-01",
+      upvoteCount: 0,
+      author: {
+        "@type": "Organization",
+        name: "Speedway Flight Training Scholarship Fund",
+      },
+    },
+  })),
+  inLanguage: "en-US",
+  about: {
+    "@type": "EducationalOrganization",
+    name: "Speedway Flight Training Scholarship Fund",
+    url: "https://speedwayscholarship.com/",
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
