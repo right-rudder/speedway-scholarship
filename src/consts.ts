@@ -17,13 +17,14 @@ export const OG_IMAGE = "/Speedway-Scholarship-Fund-OG-image.png";
 
 export const LOCATIONS = [
   {
-    title: ``,
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    gMaps: "https://maps.app.goo.gl/",
-    phone: "",
+    title: `Atlanta Speedway Airport<br><small class="text-xs -mt-3">ATL</small>`,
+    address: "474 Speedway Blvd",
+    city: "Hampton",
+    state: "GA",
+    zip: "30228",
+    gMaps: "https://maps.app.goo.gl/jgGYGrkLEd8Mjuu19",
+    phone: "(678) 944-7379",
+    forwardPhone: "(678) 944-7379",
   },
 ];
 
