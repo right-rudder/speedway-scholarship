@@ -62,8 +62,20 @@ export const RRM_SYMBOL = {
   imageAlt:
     "RRM aviation marketing symbol - Flight school lead generation specialists",
 };
-export const WESTWIND_AIR_SERVICE = {
+export const  WESTWIND_AIR_SERVICE = {
   imagePath: "/src/assets/westwind-air-service-_TUvJQS9Aoo-unsplash.jpg",
+  imageAlt:
+    "Professional flight training aircraft for aviation education programs",
+};
+
+export const  ATLANTA_AIRPORT_SPEEDWAY_FLIGHT_TRAINING_102 = {
+  imagePath: "/src/assets/atlanta-airport-Speedway-Flight-Training-102.webp",
+  imageAlt:
+    "Professional flight training aircraft for aviation education programs",
+};
+
+export const  ATLANTA_AIRPORT_SPEEDWAY_FLIGHT_TRAINING_104 = {
+  imagePath: "/src/assets/atlanta-airport-Speedway-Flight-Training-104.webp",
   imageAlt:
     "Professional flight training aircraft for aviation education programs",
 };

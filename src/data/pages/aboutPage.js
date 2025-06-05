@@ -2,7 +2,7 @@ import { COMPANY_NAME, COMPANY_NICKNAME } from "../../consts";
 import {
   PLACEHOLDER as contentCTAimg,
   RAYYU_MALDIVES as imgUnderHeader,
-  JORGEN_HENDRICKSEN as imgHeader,
+  ATLANTA_AIRPORT_SPEEDWAY_FLIGHT_TRAINING_104 as imgHeader,
 } from "../../constsImages";
 
 const aboutPage = {
