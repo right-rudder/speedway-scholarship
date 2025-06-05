@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /apply
+Allow: /donate
+Allow: /about
+Allow: /speedway
+Allow: /contact-us
+
+# Block confirmation pages from indexing
+Disallow: /apply-confirmation
+Disallow: /contact-confirmation
+Disallow: /donate-acknowledgement
+
+# Sitemap
+Sitemap: https://speedwayscholarship.com/sitemap-index.xml

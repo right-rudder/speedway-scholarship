@@ -1,0 +1,177 @@
+---
+import {
+  COMPANY_NAME,
+  PHONE_NUMBER,
+  EMAIL_ADDRESS,
+  ADDRESS_LINE_1,
+  ADDRESS_CITY,
+  ADDRESS_STATE,
+  ADDRESS_ZIP,
+  GMAPS,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+} from "../../consts";
+
+interface Props {
+  includeReviews?: boolean;
+  includeEvents?: boolean;
+}
+
+const { includeReviews = false, includeEvents = false } = Astro.props;
+---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Speedway Flight Training Scholarship Fund",
+    "alternateName": ["Speedway Scholarship Fund", "Speedway Fund"],
+    "description": "Non-profit organization providing fully funded flight training scholarships for high school students pursuing aviation careers.",
+    "url": "https://speedwayscholarship.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://speedwayscholarship.com/speedway-flight-training-written-logo.png",
+      "width": "300",
+      "height": "100",
+      "caption": "Speedway Flight Training Scholarship Fund Logo"
+    },
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://speedwayscholarship.com/Speedway-Scholarship-Fund-OG-image.png",
+        "width": "1200",
+        "height": "630",
+        "caption": "Speedway Flight Training Scholarship Fund Social Media Image"
+      }
+    ],
+    "telephone": "(678) 944-7379",
+    "email": "info@speedwayscholarship.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "474 Speedway Blvd",
+      "addressLocality": "Hampton",
+      "addressRegion": "GA",
+      "addressCountry": "US",
+      "postalCode": "30228"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.3881,
+      "longitude": -84.3207
+    },
+    "foundingDate": "2024",
+    "founder": {
+      "@type": "Organization",
+      "name": "Speedway Flight Training"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Atlanta Speedway Airport",
+      "identifier": "KHMP"
+    },
+    "knowsAbout": [
+      "Aviation Education",
+      "Flight Training Scholarships",
+      "Private Pilot Certification",
+      "Youth Aviation Programs",
+      "High School Aviation",
+      "Pilot Career Development",
+      "Aviation Safety Training",
+      "Aircraft Flight Training"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Aviation Scholarship Programs",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Private Pilot License Scholarship",
+          "description": "Fully funded flight training program for high school students",
+          "provider": {
+            "@type": "Organization",
+            "name": "Speedway Flight Training Scholarship Fund"
+          },
+          "occupationalCategory": "Pilot",
+          "educationalLevel": "High School",
+          "timeRequired": "P6M",
+          "totalTime": "PT50H",
+          "coursePrerequisites": "High school enrollment, basic medical certification",
+          "educationalCredentialAwarded": "FAA Private Pilot Certificate",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "category": "Education"
+          }
+        }
+      ]
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "(678) 944-7379",
+        "contactType": "customer service",
+        "email": "info@speedwayscholarship.com",
+        "availableLanguage": ["English"],
+        "areaServed": "Georgia",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/people/Speedway-Flight-Training/61574840653146/",
+      "https://www.instagram.com/speedway_flight_training/"
+    ],
+    "publishingPrinciples": "https://speedwayscholarship.com/privacy-policy",
+    "award": [
+      "Community Impact Award for Youth Aviation Education",
+      "Excellence in Flight Training Scholarship Programs"
+    ],
+    "nonprofitStatus": "501c3",
+    "seeks": {
+      "@type": "Demand",
+      "name": "High School Aviation Students",
+      "description": "Seeking motivated high school students passionate about aviation careers"
+    },
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "Georgia Aviation Community"
+      },
+      {
+        "@type": "Organization",
+        "name": "National Aviation Education Network"
+      }
+    ],
+    "subOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "Speedway Flight Training Scholarship Program",
+      "description": "Educational arm providing structured flight training curriculum"
+    },
+    "department": [
+      {
+        "@type": "Organization",
+        "name": "Student Services",
+        "description": "Handles scholarship applications and student support"
+      },
+      {
+        "@type": "Organization",
+        "name": "Flight Training Operations",
+        "description": "Manages flight instruction and aircraft operations"
+      }
+    ]
+  }
+</script>

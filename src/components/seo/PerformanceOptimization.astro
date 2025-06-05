@@ -1,0 +1,184 @@
+---
+// Performance Optimization Component for SEO
+// This component adds performance and SEO optimizations
+
+interface Props {
+  enableWebVitals?: boolean;
+  enablePrefetch?: boolean;
+  enableCriticalCSS?: boolean;
+}
+
+const { 
+  enableWebVitals = true,
+  enablePrefetch = true,
+  enableCriticalCSS = true 
+} = Astro.props;
+
+// Critical CSS for above-the-fold content
+const criticalCSS = `
+  /* Critical CSS for faster initial render */
+  .hero-section { 
+    display: block; 
+    min-height: 70vh; 
+  }
+  .nav-primary { 
+    display: flex; 
+    align-items: center; 
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: #1e40af;
+  }
+`;
+
+// Pages to prefetch for improved navigation
+const prefetchUrls = [
+  "/about",
+  "/apply", 
+  "/donate",
+  "/speedway",
+  "/contact-us"
+];
+---
+
+{enableCriticalCSS && (
+  <style set:html={criticalCSS}></style>
+)}
+
+{enablePrefetch && (
+  <>
+    {prefetchUrls.map(url => (
+      <link rel="prefetch" href={url}>
+    ))}
+    <!-- Prefetch important resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://msg.flightschoolcrm.com">
+  </>
+)}
+
+{enableWebVitals && (
+  <>
+    <!-- Core Web Vitals optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- Resource hints for performance -->
+    <link rel="preload" href="/speedway-flight-training-written-logo.png" as="image" type="image/png">
+    <link rel="preload" href="/Speedway-Scholarship-Fund-OG-image.png" as="image" type="image/png">
+    
+    <!-- Performance monitoring -->
+    <script is:inline>
+      // Measure Core Web Vitals
+      function measureWebVitals() {
+        // Use Performance Observer API directly since web-vitals may not be available
+        try {
+          // Largest Contentful Paint
+          if (typeof PerformanceObserver !== 'undefined') {
+            new PerformanceObserver((entryList) => {
+              const entries = entryList.getEntries();
+              if (entries.length > 0) {
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.startTime);
+              }
+            }).observe({entryTypes: ['largest-contentful-paint']});
+            
+            // First Input Delay
+            new PerformanceObserver((entryList) => {
+              const entries = entryList.getEntries();
+              if (entries.length > 0) {
+                const firstInput = entries[0];
+                // Type check for necessary properties
+                if ('processingStart' in firstInput && 'startTime' in firstInput) {
+                  console.log('FID:', firstInput.processingStart - firstInput.startTime);
+                }
+              }
+            }).observe({entryTypes: ['first-input']});
+            
+            // Cumulative Layout Shift
+            let clsValue = 0;
+            new PerformanceObserver((entryList) => {
+              for (const entry of entryList.getEntries()) {
+                // Type check for LayoutShift properties
+                if ('hadRecentInput' in entry && 'value' in entry) {
+                  if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                    console.log('CLS current:', clsValue);
+                  }
+                }
+              }
+            }).observe({entryTypes: ['layout-shift']});
+          }
+        } catch (e) {
+          console.error('Web Vitals measurement error:', e);
+        }
+      }
+      
+      // Initialize monitoring
+      if (typeof window !== 'undefined') {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(measureWebVitals);
+        } else {
+          setTimeout(measureWebVitals, 0);
+        }
+      }
+    </script>
+  </>
+)}
+
+<!-- SEO Performance Optimizations -->
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1e3a8a">
+<meta name="color-scheme" content="light">
+
+<!-- Improved caching directives -->
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
+<!-- Structured data for performance -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Speedway Flight Training Scholarship Fund",
+  "url": "https://speedwayscholarship.com/",
+  "description": "Fully funded flight training scholarships for high school students",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://speedwayscholarship.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "EducationalOrganization",
+    "name": "Speedway Flight Training Scholarship Fund"
+  }
+}
+</script>
+
+<style>
+  /* Performance optimizations */
+  img {
+    loading: lazy;
+  }
+  
+  iframe {
+    loading: lazy;
+  }
+  
+  /* Reduce layout shifts */
+  .hero-image {
+    aspect-ratio: 16/9;
+  }
+  
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
+</style>

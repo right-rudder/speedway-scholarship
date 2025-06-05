@@ -1,0 +1,66 @@
+---
+// Review/Rating Schema for Student Testimonials
+// Helps display star ratings and reviews in search results
+export interface ReviewSchemaProps {
+  reviews: Array<{
+    author: string;
+    rating: number; // 1-5
+    reviewText: string;
+    datePublished: string; // ISO 8601 format
+    title?: string;
+  }>;
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
+    bestRating?: number;
+    worstRating?: number;
+  };
+}
+
+const { reviews, aggregateRating } = Astro.props as ReviewSchemaProps;
+
+const schemaData: any = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Speedway Flight Training",
+  "url": "https://speedwayscholarship.org",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1729 McDonough Rd",
+    "addressLocality": "Hampton", 
+    "addressRegion": "GA",
+    "postalCode": "30228",
+    "addressCountry": "US"
+  },
+  "review": reviews.map(review => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": review.author
+    },
+    "datePublished": review.datePublished,
+    "description": review.reviewText,
+    "name": review.title || `Review by ${review.author}`,
+    "reviewRating": {
+      "@type": "Rating",
+      "bestRating": "5",
+      "ratingValue": review.rating.toString(),
+      "worstRating": "1"
+    }
+  }))
+};
+
+// Add aggregate rating if provided
+if (aggregateRating) {
+  schemaData.aggregateRating = {
+    "@type": "AggregateRating",
+    "ratingValue": aggregateRating.ratingValue.toString(),
+    "reviewCount": aggregateRating.reviewCount.toString(),
+    "bestRating": (aggregateRating.bestRating || 5).toString(),
+    "worstRating": (aggregateRating.worstRating || 1).toString()
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)}>
+</script>

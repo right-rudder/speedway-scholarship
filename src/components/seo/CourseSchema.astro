@@ -1,0 +1,251 @@
+---
+interface Props {
+  courseName?: string;
+  courseType?:
+    | "Private Pilot"
+    | "Instrument Rating"
+    | "Commercial Pilot"
+    | "Flight Instructor";
+  pageContext?: string;
+}
+
+const {
+  courseName = "Private Pilot License Scholarship",
+  courseType = "Private Pilot",
+  pageContext = "main",
+} = Astro.props;
+
+// Course configurations
+const courseConfigs = {
+  "Private Pilot": {
+    name: "Private Pilot License Scholarship",
+    description:
+      "Comprehensive flight training program for high school students to obtain their FAA Private Pilot Certificate through a fully funded scholarship",
+    duration: "P6M",
+    totalTime: "PT50H",
+    groundTime: "PT40H",
+    flightTime: "PT40H",
+    soloTime: "PT10H",
+    price: "0",
+    prerequisites:
+      "High school enrollment, 16 years old by solo flight, basic medical certificate",
+    skillsLearned: [
+      "Aircraft pre-flight inspection",
+      "Radio communication procedures",
+      "Federal Aviation Regulations",
+      "Weather interpretation",
+      "Flight planning and navigation",
+      "Emergency procedures",
+      "Traffic pattern operations",
+      "Cross-country flight planning",
+    ],
+    certificationAwarded: "FAA Private Pilot Certificate",
+  },
+  "Instrument Rating": {
+    name: "Instrument Rating Training",
+    description:
+      "Advanced flight training for instrument flight rules and weather conditions",
+    duration: "P4M",
+    totalTime: "PT40H",
+    price: "Contact for pricing",
+    prerequisites: "Valid Private Pilot Certificate",
+    skillsLearned: [
+      "Instrument approach procedures",
+      "IFR flight planning",
+      "Advanced weather systems",
+      "Precision and non-precision approaches",
+    ],
+    certificationAwarded: "FAA Instrument Rating",
+  },
+  "Commercial Pilot": {
+    name: "Commercial Pilot Certificate Training",
+    description: "Professional pilot training for commercial aviation careers",
+    duration: "P6M",
+    totalTime: "PT250H",
+    price: "Contact for pricing",
+    prerequisites: "Valid Private Pilot Certificate and Instrument Rating",
+    skillsLearned: [
+      "Advanced flight maneuvers",
+      "Commercial aviation operations",
+      "Complex aircraft operations",
+      "Professional pilot responsibilities",
+    ],
+    certificationAwarded: "FAA Commercial Pilot Certificate",
+  },
+  "Flight Instructor": {
+    name: "Certified Flight Instructor Training",
+    description:
+      "Professional instructor training to teach the next generation of pilots",
+    duration: "P3M",
+    totalTime: "PT25H",
+    price: "Contact for pricing",
+    prerequisites: "Valid Commercial Pilot Certificate",
+    skillsLearned: [
+      "Flight instruction techniques",
+      "Student evaluation methods",
+      "Aviation teaching principles",
+      "Regulatory instruction requirements",
+    ],
+    certificationAwarded: "FAA Certified Flight Instructor Certificate",
+  },
+};
+
+const course = courseConfigs[courseType];
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.name,
+    description: course.description,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Speedway Flight Training Scholarship Fund",
+      url: "https://speedwayscholarship.com/",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "474 Speedway Blvd",
+        addressLocality: "Hampton",
+        addressRegion: "GA",
+        postalCode: "30228",
+        addressCountry: "US",
+      },
+      telephone: "(678) 944-7379",
+      email: "info@speedwayscholarship.com",
+    },
+    courseCode: courseType.replace(/\s/g, "").toUpperCase(),
+    courseMode: ["hands-on", "blended"],
+    deliveryMode: "InPerson",
+    educationalLevel: "High School",
+    timeRequired: course.duration,
+    totalTime: course.totalTime,
+    courseDuration: course.duration,
+    coursePrerequisites: course.prerequisites,
+    teaches: course.skillsLearned,
+    learningResourceType: [
+      "Flight Training",
+      "Ground School",
+      "Practical Examination",
+      "Knowledge Test Preparation",
+    ],
+    educationalCredentialAwarded: course.certificationAwarded,
+    occupationalCategory: "Pilot",
+    competencyRequired: [
+      "Basic mathematics skills",
+      "English language proficiency",
+      "Physical fitness for aviation medical certificate",
+      "Commitment to aviation safety",
+    ],
+    skillsAcquired: course.skillsLearned,
+    offers: {
+      "@type": "Offer",
+      price: course.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      category: "Aviation Education",
+      description:
+        courseType === "Private Pilot"
+          ? "Fully funded scholarship covering all training costs"
+          : "Professional flight training program",
+      validFrom: "2024-01-01",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        price: courseType === "Private Pilot" ? "0" : "Contact for pricing",
+        priceCurrency: "USD",
+      },
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "In-person",
+      location: {
+        "@type": "Place",
+        name: "Atlanta Speedway Airport",
+        identifier: "KHMP",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "474 Speedway Blvd",
+          addressLocality: "Hampton",
+          addressRegion: "GA",
+          postalCode: "30228",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 33.3881,
+          longitude: -84.3207,
+        },
+      },
+      startDate: "2024-01-01",
+      courseWorkload: "PT15H",
+      courseSchedule: {
+        "@type": "Schedule",
+        repeatFrequency: "P1W",
+        byDay: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+      },
+    },
+    syllabusSections: [
+      {
+        "@type": "Syllabus",
+        name: "Ground School",
+        description:
+          "Federal Aviation Regulations, weather, navigation, and aerodynamics",
+        timeRequired: courseType === "Private Pilot" ? "PT40H" : "PT20H",
+      },
+      {
+        "@type": "Syllabus",
+        name: "Flight Training",
+        description:
+          "Hands-on flight instruction with certified flight instructors",
+        timeRequired: course.totalTime,
+      },
+      {
+        "@type": "Syllabus",
+        name: "Solo Flight Practice",
+        description: "Independent flight practice under instructor supervision",
+        timeRequired: courseType === "Private Pilot" ? "PT10H" : "PT5H",
+      },
+      {
+        "@type": "Syllabus",
+        name: "Checkride Preparation",
+        description:
+          "Preparation for FAA practical examination with designated examiner",
+        timeRequired: "PT5H",
+      },
+    ],
+    courseAudience: {
+      "@type": "EducationalAudience",
+      audienceType:
+        courseType === "Private Pilot"
+          ? "High School Students"
+          : "Licensed Pilots",
+      educationalRole: "Student",
+    },
+    inLanguage: "en-US",
+    isAccessibleForFree: courseType === "Private Pilot",
+    license: "https://speedwayscholarship.com/terms-of-service",
+    assesses: [
+      "Flight proficiency",
+      "Aviation knowledge",
+      "Safety procedures",
+      "Federal Aviation Regulations",
+    ],
+    educationalAlignment: {
+      "@type": "AlignmentObject",
+      alignmentType: "educationalLevel",
+      educationalFramework: "FAA Training Standards",
+      targetName: course.certificationAwarded,
+    },
+    workload: course.totalTime,
+    financialAidEligible: courseType === "Private Pilot",
+  })}
+/>
